@@ -1,8 +1,13 @@
 import React from 'react'
 
-const DoctorAppointment = () => {
+const DoctorAppointment = ({oneDoctorAppointment}) => {
   return (
-    <div>DoctorAppointment</div>
+    <article>
+        <p>Patient: {oneDoctorAppointment.patientName}</p>
+        <p>Room: {oneDoctorAppointment.roomName}</p>
+        <p>Date: {oneDoctorAppointment.appointmentDate}</p>
+        <p>Time: {oneDoctorAppointment.appointmentTime}</p>
+    </article>
   )
 }
 

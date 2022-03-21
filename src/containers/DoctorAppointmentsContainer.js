@@ -1,12 +1,16 @@
 import React from 'react';
+import DoctorAppointment from '../components/DoctorAppointment';
 
 const DoctorAppointmentsContainer = ({doctorAppointmentsList}) => {
-  
+  const allAppointments = doctorAppointmentsList.map((oneAppointment, index) => {
+    return <DoctorAppointment oneDoctorAppointment={oneAppointment}/>
+  }
+  )
 
   return (
-    <h2>
-      {doctorAppointmentsList[0].doctorName}
-    </h2>
+    <>
+     {allAppointments}
+    </>
   )
 }
 
