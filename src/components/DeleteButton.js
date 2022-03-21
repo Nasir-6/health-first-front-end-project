@@ -1,10 +1,10 @@
 import React from 'react'
 
-const DeleteButton= () =>  {
+const DeleteButton= ({deleteButtonClick}) =>  {
 
   return (
-    <button className='delete-btn'>
-        <i class="fa-solid fa-x"></i>
+    <button className='delete-btn' onClick={deleteButtonClick}>
+        <i className="fa-solid fa-x"></i>
     </button>
   )
 }

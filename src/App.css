@@ -47,7 +47,13 @@ button{
   justify-content: flex-end;
 }
 
+#doctor-welcome{
+  text-align: center;
+}
 
+#doctor-appointments-title{
+  text-align: center;
+}
 
 
 

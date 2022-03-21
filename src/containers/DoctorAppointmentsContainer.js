@@ -1,18 +1,20 @@
 import React from 'react';
 import DoctorAppointment from '../components/DoctorAppointment';
 
-const DoctorAppointmentsContainer = ({doctorAppointmentsList}) => {
+const DoctorAppointmentsContainer = ({doctorAppointmentsList, handleDeleteAppointment}) => {
 
   // Map to return all appointmenst in the list
-  const allAppointments = doctorAppointmentsList.map((oneAppointment, index) => {
+  const allAppointments = doctorAppointmentsList.map(oneAppointment => {
 
-    return <DoctorAppointment key={index} oneDoctorAppointment={oneAppointment}/>
-    
+    return <DoctorAppointment key={oneAppointment.appointmentId} 
+    oneDoctorAppointment={oneAppointment}
+    handleDeleteAppointment={(oneAppointment) => handleDeleteAppointment(oneAppointment.appointmentId)}/>    
   }
   )
 
   return (
     <section className='doctor-appointments-container'>
+      <h2 id="doctor-appointments-title">Here is a list of your appointments:</h2> 
      {allAppointments}
     </section >
   )
