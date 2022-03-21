@@ -1,7 +1,13 @@
 import React from 'react';
 
-export default function DoctorAppointmentsContainer() {
+const DoctorAppointmentsContainer = ({doctorAppointmentsList}) => {
+  
+
   return (
-    <div>DoctorAppointmentsContainer</div>
+    <h2>
+      {doctorAppointmentsList[0].name}
+    </h2>
   )
 }
+
+export default DoctorAppointmentsContainer;
