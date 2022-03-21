@@ -12,9 +12,9 @@ const DoctorAppointmentsContainer = ({doctorAppointmentsList}) => {
   )
 
   return (
-    <>
+    <section className='doctor-appointments-container'>
      {allAppointments}
-    </>
+    </section >
   )
 }
 
