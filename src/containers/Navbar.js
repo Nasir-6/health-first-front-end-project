@@ -1,5 +1,4 @@
 import React from 'react'
-import healthFirstLogo from '../images/healthFirstLogo.png'
 import LoginButton from '../components/LoginButton'
 import { Link } from 'react-router-dom'
 import SignUpButton from '../components/SignUpButton'
@@ -9,15 +8,20 @@ const Navbar = () => {
   
   return (
   
-    <>
-
+    <header className='navBar'>
+      
     <Link to= "/">
-    <img src = {healthFirstLogo} alt = "Blue Health First logo"/>
+      <div className='firstImage'></div>
+    {/* <img src = {healthFirstLogo} alt = "Blue Health First logo" className='logo'></img>
+    <img src = {healthFirstLogoInverse} className='logo-inverse'></img> */}
     </Link>
+  
 
+    <div className='navRight'>
     <LoginButton/>
     <SignUpButton/>
-    </>
+    </div>
+    </header>
   )
 }
 
