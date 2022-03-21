@@ -9,6 +9,8 @@ const DoctorPage = () => {
   const [doctorAppointmentsList, setDoctorAppointmentsList] = useState([]);
   const {doctorName} = useParams()
   const doctorAppointmentsUrl = "http://localhost:8080/appointments/doctor/" + doctorName;
+
+  
   useEffect( () =>
     fetch(doctorAppointmentsUrl)
     .then(response => response.json())

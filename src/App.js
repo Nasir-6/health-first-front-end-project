@@ -23,6 +23,7 @@ function App() {
     <Router>
       <div className="app">
         <Navbar />
+        {/* <i class="fa-solid fa-x fa-3x"></i> */}
 
         <Routes>
           <Route exact path="/" element={<Home/>} />

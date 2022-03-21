@@ -2,8 +2,12 @@ import React from 'react';
 import DoctorAppointment from '../components/DoctorAppointment';
 
 const DoctorAppointmentsContainer = ({doctorAppointmentsList}) => {
+
+  // Map to return all appointmenst in the list
   const allAppointments = doctorAppointmentsList.map((oneAppointment, index) => {
-    return <DoctorAppointment oneDoctorAppointment={oneAppointment}/>
+
+    return <DoctorAppointment key={index} oneDoctorAppointment={oneAppointment}/>
+    
   }
   )
 
