@@ -6,9 +6,9 @@ const DoctorAppointmentsContainer = ({doctorAppointmentsList, handleDeleteAppoin
   // Map to return all appointmenst in the list
   const allAppointments = doctorAppointmentsList.map(oneAppointment => {
 
-    return <DoctorAppointment key={oneAppointment.appointmentId} 
+    return <DoctorAppointment key={oneAppointment.appointmentId} id={oneAppointment.appointmentId}
     oneDoctorAppointment={oneAppointment}
-    handleDeleteAppointment={(oneAppointment) => handleDeleteAppointment(oneAppointment.appointmentId)}/>    
+    handleDeleteAppointment={handleDeleteAppointment}/>    
   }
   )
 

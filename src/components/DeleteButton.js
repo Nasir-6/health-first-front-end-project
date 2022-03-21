@@ -1,11 +1,13 @@
 import React from 'react'
 
-const DeleteButton= ({deleteButtonClick}) =>  {
+const DeleteButton= ({deleteButtonClick, id}) =>  {
 
   return (
-    <button className='delete-btn' onClick={deleteButtonClick}>
+    <>
+    <button className='delete-btn' id={id} onClick={(e)=>deleteButtonClick(e)} >
         <i className="fa-solid fa-x"></i>
     </button>
+    </>
   )
 }
 

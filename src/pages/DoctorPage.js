@@ -24,7 +24,10 @@ const DoctorPage = () => {
       .catch(error => console.log(error));
   }
 
-  const deleteAppointment = async (appointmentId) => {
+  const deleteAppointment = async (e) => {
+    console.log(e.currentTarget.id)
+    const appointmentId = e.currentTarget.id
+    
     console.log(appointmentId);
     const deleteAppointmentUrl = "http://localhost:8080/appointments/" + appointmentId;
     await fetch(deleteAppointmentUrl ,
