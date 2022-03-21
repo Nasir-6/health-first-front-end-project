@@ -1,4 +1,6 @@
 import React from 'react'
+import PatientLoginForm from '../components/PatientLoginForm';
+import DoctorLoginForm from '../components/DoctorLoginForm';
 
 const Login = () => {
 
@@ -30,8 +32,7 @@ const Login = () => {
         <label htmlFor="patientChoice">Patient</label>
       </form>
 
-      
-
+      {isDoctor ? <DoctorLoginForm /> : <PatientLoginForm />}
 
     </div>
   );
