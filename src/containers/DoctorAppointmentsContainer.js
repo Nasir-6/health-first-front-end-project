@@ -5,7 +5,7 @@ const DoctorAppointmentsContainer = ({doctorAppointmentsList}) => {
 
   return (
     <h2>
-      {doctorAppointmentsList[0].name}
+      {doctorAppointmentsList[0].doctorName}
     </h2>
   )
 }
