@@ -5,7 +5,7 @@ function DoctorAppointmentForm({patientList}) {
 
     const [time, setTime] = useState("")
     const [date, setDate] = useState("")
-    const [patientName,setPatientName] = useState("")
+    const [patientName,setPatientName] = useState("someName")
 
     const handleTimeChange = (e) => {
         setTime(e.target.value)
@@ -15,11 +15,16 @@ function DoctorAppointmentForm({patientList}) {
         setDate(e.target.value)
     }
     const handlePatientNameChange = (e) => {
+        
         console.log("hello")
     //    console.log(e.target.value)
         console.log(patientName)
-        setPatientName(e.target.options[e.target.selectedIndex].text )
+        console.log(e.target.options[e.target.selectedIndex].text)
+        const name = e.target.options[e.target.selectedIndex].text
+        console.log(name)
+        setPatientName(name)
         console.log(patientName)
+        e.preventDefault(); 
 
         // console.log(e.target.options[e.target.selectedIndex].text);  //
         // const name=e.target.options[e.target.selectedIndex].text 
@@ -30,7 +35,6 @@ function DoctorAppointmentForm({patientList}) {
         
     }
 
-
   return (
     <>
     <div>DoctorAppointmentForm</div>
@@ -39,7 +43,7 @@ function DoctorAppointmentForm({patientList}) {
         <label>
           Patient Name:
           {/* <select value={this.state.value} onChange={this.handleChange}> */}
-          <select onChange={handlePatientNameChange} value="hh">
+          <select onChange={handlePatientNameChange} value={patientName}>
               {patientList.map((patient)=> {
                   return(
                   <option key = {patient.patientNhsId} value = {patient.patientName}>{patient.patientName}</option>
