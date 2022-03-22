@@ -17,6 +17,7 @@ const DoctorAppointment = ({id , oneDoctorAppointment, handleDeleteAppointment, 
   const [patientName, setPatientName] = useState(oneDoctorAppointment.patientName);
   const [date, setDate] = useState(oneDoctorAppointment.appointmentDate);
   const [time, setTime] = useState(oneDoctorAppointment.appointmentTime);
+  
   const handleNameChange = (event) => {
     setPatientName(event.target.value)
 }
@@ -33,7 +34,7 @@ const handleTimeChange = (event) => {
     <article className='doctor-Appointment'>
       <div className='delete-btn-position'><DeleteButton id = {id} deleteButtonClick={handleDeleteAppointment}/></div>
         <p>Patient:</p>
-        <input value={patientName} disabled={isDisabled} onChange={handleNameChange} name="name"/>
+        <input value={patientName} disabled={isDisabled} onChange={handleNameChange} />
         <p>Date:</p>
         <input value={date} disabled={isDisabled} onChange={handleDateChange}/>
         <p>Time:</p>
