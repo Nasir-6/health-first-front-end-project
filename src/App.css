@@ -247,3 +247,16 @@ button:hover, .button:hover {
 .invalidText{
   color: red;
 }
+
+
+@media only screen and (max-width: 850px) {
+
+    .login-card-right{
+        width: 100%;
+    }
+    
+    .login-card-left{
+        width: 0%;
+    }
+
+  }
