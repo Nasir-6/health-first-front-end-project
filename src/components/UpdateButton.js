@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import FinaliseUpdateButton from './FinaliseUpdateButton';
 
-const UpdateButton= ({showIsDisabled, updateAppointment, patientName, id, date, time}) =>  {
+const UpdateButton= ({showIsDisabled, updateAppointment, patientName, id, date, time, patientId}) =>  {
   const [isUpdating, setIsUpdating] = useState(false);
   const showIsUpdating = () => {
     showIsDisabled()
@@ -18,7 +18,7 @@ const UpdateButton= ({showIsDisabled, updateAppointment, patientName, id, date, 
     <button onClick={showIsUpdating}>
         Update Button
     </button>
-    {isUpdating? <FinaliseUpdateButton updateAppointment={updateAppointment} id = {id} patientName={patientName} date={date} time={time}/>: console.log("not updating")}
+    {isUpdating? <FinaliseUpdateButton updateAppointment={updateAppointment} id = {id} patientName={patientName} date={date} time={time} patientId={patientId} showIsDisabled= {showIsDisabled} showIsUpdating ={showIsUpdating}/>: console.log("not updating")}
     </>
   )
 }
