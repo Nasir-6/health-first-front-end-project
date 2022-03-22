@@ -148,6 +148,9 @@ p{
 .delete-btn{
   background-color: #4b8ec6;
 }
+.delete-btn:hover{
+  background-color:#1C2541;;
+}
 .doctor-appointment-content{
   background-color: #4b8ec6;
   font-weight: bold;

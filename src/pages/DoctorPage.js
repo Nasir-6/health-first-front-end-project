@@ -8,9 +8,10 @@ const DoctorPage = () => {
 
 
   const [doctorAppointmentsList, setDoctorAppointmentsList] = useState([]);
-  const {doctorName} = useParams()
+  // const {doctorName} = useParams()
+  const {doctorId} = useParams()
   const[isUpdated, setIsUpdated] = useState(false)
-  const getDoctorAppointmentsUrl = "http://localhost:8080/appointments/doctor/" + doctorName;
+  const getDoctorAppointmentsUrl = "http://localhost:8080/appointments/doctorId/" + doctorId;
   
 
   useEffect( () =>
@@ -69,7 +70,7 @@ const DoctorPage = () => {
 
   return (
     <>
-    <h2 id="doctor-welcome">Hi Dr {doctorName}</h2> 
+    <h2 id="doctor-welcome">Hi Dr {doctorId}</h2> 
     <DoctorAppointmentsContainer doctorAppointmentsList={doctorAppointmentsList}
     handleDeleteAppointment={deleteAppointment} 
     updateAppointment={updateAppointment}
