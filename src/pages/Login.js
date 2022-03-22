@@ -1,11 +1,12 @@
 import React from 'react'
 import PatientLoginForm from '../components/PatientLoginForm';
 import DoctorLoginForm from '../components/DoctorLoginForm';
+import {useState} from 'react'
 
 const Login = () => {
 
     //State for whether loggin in as Doctor or Patient
-    const [isDoctor, setIsDoctor] = React.useState(true);
+    const [isDoctor, setIsDoctor] = useState(true);
 
   const handleRadioChange = (event) => {
       // event target value is the value of radio button (cannot convert "true" to true so use ifelse statement to setState!)

@@ -1,11 +1,14 @@
 import React from "react";
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 const DoctorLoginForm = () => {
 
         // Set all states to empty at start
         const [doctorName, setDoctorName] = useState("");
         const [doctorId, setDoctorId] = useState("");
+        const [invalidTextWarning, setInvalidTextWarning] = useState("");
+        const navigate = useNavigate();
     
         // create onchange event handlers!!
         const handleDoctorNameChange = (event) => {
@@ -16,22 +19,44 @@ const DoctorLoginForm = () => {
             setDoctorId(event.target.value);
         }
 
+
+        // Fetch request to grab doctorByID
+        const getDoctorById = async (id) =>{
+            const doctor = await fetch(`http://localhost:8080/doctors/${id}`)
+            .then(response => response.json())
+            // .then(data => console.log(data))
+            .catch(error => console.error(error))
+
+            return doctor;            
+        }
     
         // Form submit handler
-        const handleFormSubmit = (event) => {
+        // MAKE SURE TO HAVE async and await to ensure promise is returned before moving onto next line of code!!!
+        const handleFormSubmit = async (event) => {
             event.preventDefault();
             //validate inputs (if empty just exits don't submit or do anything)
+
+            setInvalidTextWarning(" ");
+
             if(!doctorName || !doctorId){
+                setInvalidTextWarning("Please enter missing fields");
                 return
             }
     
             // Check if Doctor is DB!!
-    
-    
-    
-            // Lastly reset all input states - maybe not needed
-            setDoctorName("")
-            setDoctorId("")
+            const doctorInDb = await getDoctorById(doctorId);
+
+            if(doctorInDb === null || doctorInDb === undefined || doctorInDb.status == 404){
+                setInvalidTextWarning("Invalid Name or Id");
+                return
+            } else if(doctorInDb.doctorName.split(" ")[1].toLowerCase() === doctorName.toLowerCase()){
+                setInvalidTextWarning(" ");
+                navigate(`/doctor/${doctorInDb.doctorName.split(" ")[1].toLowerCase()}`);
+                return
+            } else {
+                setInvalidTextWarning("Something went wrong");
+            }
+
         }
 
 
@@ -40,9 +65,7 @@ const DoctorLoginForm = () => {
 
   return (
     <>
-      <h2>Doctor Form</h2>
-
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <label htmlFor="doctorName">Name:</label>
         <input
           type="text"
@@ -60,6 +83,9 @@ const DoctorLoginForm = () => {
           value={doctorId}
           onChange={handleDoctorIdChange}
         />
+        
+
+        <p className="invalidText">{invalidTextWarning}</p>
 
         <input type="submit" value="Login" />
       </form>

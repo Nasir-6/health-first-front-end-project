@@ -27,3 +27,8 @@
 
 
 /* Login page CSS */
+
+
+.invalidText{
+  color: red;
+}
