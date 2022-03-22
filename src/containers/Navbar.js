@@ -11,7 +11,7 @@ const Navbar = () => {
     <header className='navBar'>
       
     <Link to= "/">
-      <div className='firstImage'></div>
+      <div className='firstImage' alt = "Blue Health First logo"></div>
     {/* <img src = {healthFirstLogo} alt = "Blue Health First logo" className='logo'></img>
     <img src = {healthFirstLogoInverse} className='logo-inverse'></img> */}
     </Link>

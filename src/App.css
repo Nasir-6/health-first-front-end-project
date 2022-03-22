@@ -1,63 +1,108 @@
 :root{
   --logo-color: #4b8ec6;
   --dark-color: #1C2541;
-  --signature-color: #E34A6F;
-  --winning-color: #5CFFB3;
+  --background-color: #CCE3F5;
+  --secondary-color: #E8EDEE;
 }
 
 *{
     /* box-sizing: border-box; */
     font-family: sans-serif;
-    padding: 5%;
+    background-color: var(--secondary-color);
 }
 
-/* General Navbar and footer css */
+/* General Navbar css */
 
 .navBar{
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: var(--secondary-color);
     padding-top: 2rem;
-    justify-content: space-between;
+    padding-bottom: 1rem;
+    justify-content: space-between;   
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .firstImage{
-    height: 6rem;
-    width: 18rem;
+    height: 5rem;
+    width: 14rem;
     background: url("./images/logo.png");
-
-    background-size: contain;
+    background-size: 100%;
     background-repeat: no-repeat;
 }
 
 .firstImage:hover{
-    height: 6rem;
-    width: 18rem;
-    background-size: contain;
+    height: 5rem;
+    width: 14rem;
+    background-repeat: no-repeat;
     background: url("./images/logoInverse.png");
+    background-size: 100%;
 
 }
 
 .navRight{
     display: flex;
+    justify-content: flex-end;
     gap: 30px;
-    padding-right: 10px;
 }
 
 button{
 background-color:  var(--logo-color) ;
 color: white;
-height: 6rem;
-width: 6rem;
-font-size: 18px;
+height: 1.5rem;
+width: 5rem;
+font-size: 12px;
 border: none;
 justify-items: space-between;
+cursor: pointer;
 }
 
 button:hover {
     background-color: var(--dark-color);
     color: white;
   }
+
+
+  /* Landing page CSS */
+
+  body{
+    display: flex;
+    justify-content: center;
+  }
+
+
+.doctorImage{
+    height: auto;
+    width: 80%;
+}
+
+h2{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/*Footer CSS*/
+.footer{
+    background-color:var(--secondary-color);
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+p{
+    margin: .5rem;
+    background-color: var(--secondary-color);
+    font-size: .5rem;
+    color: var(--logo-color);
+}
+
+.logoInverse{
+    height: 2rem;
+    width: 6rem;
+    margin: .5rem;
+}
 
 /* Appointments CSS */
 
