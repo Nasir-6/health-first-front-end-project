@@ -3,15 +3,26 @@ import {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import DeleteButton from '../components/DeleteButton';
 import DoctorAppointmentsContainer from '../containers/DoctorAppointmentsContainer';
+import DoctorFormContainer from '../containers/DoctorFormContainer';
 
 const DoctorPage = () => {
 
 
   const [doctorAppointmentsList, setDoctorAppointmentsList] = useState([]);
+  const [patientList, setPatientList] = useState([]); 
   // const {doctorName} = useParams()
   const {doctorId} = useParams()
   const[isUpdated, setIsUpdated] = useState(false)
   const getDoctorAppointmentsUrl = "http://localhost:8080/appointments/doctorId/" + doctorId;
+
+ useEffect(() => {
+    fetch("http://localhost:8080/patients")
+      .then(response => response.json())
+      .then(data => setPatientList(data))
+      .catch(error => console.log(error));
+  },[])
+  
+  
   
 
   useEffect( () =>
@@ -75,6 +86,7 @@ const DoctorPage = () => {
     handleDeleteAppointment={deleteAppointment} 
     updateAppointment={updateAppointment}
     />
+    <DoctorFormContainer patientList = {patientList}/> 
     </>
   )
 }
