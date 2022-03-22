@@ -8,9 +8,10 @@ const DoctorPage = () => {
 
 
   const [doctorAppointmentsList, setDoctorAppointmentsList] = useState([]);
-  const {doctorName} = useParams()
+//   const {doctorName} = useParams()
+  const {doctorId} = useParams()
   const[isUpdated, setIsUpdated] = useState(false)
-  const getDoctorAppointmentsUrl = "http://localhost:8080/appointments/doctor/" + doctorName;
+  const getDoctorAppointmentsUrl = "http://localhost:8080/appointments/doctorId/" + doctorId;
   const [allPatients, setAllPatients]= useState([])
 
 //get all the patients 
@@ -20,6 +21,8 @@ const DoctorPage = () => {
   .then(data => setAllPatients(data))
   .catch(error => console.log(error)), []);
 
+
+  // See if can replace replace function in useEffect with getAppointmentsList
   useEffect( () =>
   fetch(getDoctorAppointmentsUrl)
   .then(response => response.json())
@@ -73,10 +76,10 @@ const DoctorPage = () => {
   }
 
   
-
+// Change Id back to Name once sorted
   return (
     <>
-    <h2 id="doctor-welcome">Hi Dr {doctorName}</h2> 
+    <h2 id="doctor-welcome">Hi Dr {doctorId}</h2> 
     <DoctorAppointmentsContainer doctorAppointmentsList={doctorAppointmentsList}
     handleDeleteAppointment={deleteAppointment} 
     updateAppointment={updateAppointment}/>

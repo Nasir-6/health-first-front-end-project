@@ -51,7 +51,7 @@ const DoctorLoginForm = () => {
                 return
             } else if(doctorInDb.doctorName.split(" ")[1].toLowerCase() === doctorName.toLowerCase()){
                 setInvalidTextWarning(" ");
-                navigate(`/doctor/${doctorInDb.doctorName.split(" ")[1].toLowerCase()}`);
+                navigate(`/doctor/${doctorInDb.doctorId}`);
                 return
             } else {
                 setInvalidTextWarning("Something went wrong");
