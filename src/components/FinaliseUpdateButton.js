@@ -1,26 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
 
-const FinaliseUpdateButton= ({updateAppointment, id, date, time}) => {
+const FinaliseUpdateButton= ({updateAppointment, id, date, time, patientId, showIsDisabled, showIsUpdating}) => {
 
-  // const [patientName, setPatientName] = useState("");
-  // const [date, setDate] = useState("");
-  // const [time, setTime] = useState("");
+
   const [patientNhsId, setPatientNhsId]=useState(0)
   const [doctorId, setDoctorId] = useState(0)
+  
 
-
-  // const handleNameChange = (event) => {
-  //     setPatientName(event.target.value)
-  // }
-
-  // const handleDateChange = (event) => {
-  //     setDate(event.target.value)
-  // }
-
-  // const handleTimeChange = (event) => {
-  //     setTime(event.target.value)
-  // }
+ 
 
   async function fetchingNhsId(url){
     const response=await fetch(url); 
@@ -50,29 +38,27 @@ const FinaliseUpdateButton= ({updateAppointment, id, date, time}) => {
 
   const handleFormSubmit = async (event) => {
       event.preventDefault(); 
-      // if(!patientName||!date||!time){
-      //     alert("missing information");
-      //     return; 
-      // }
+     
       const appointmentId= event.currentTarget.id
       const url = "http://localhost:8080/appointments/"+ appointmentId;
 
      
       console.log(patientNhsId)
       console.log(doctorId)
+      if(patientId!==patientNhsId&& patientId!==undefined){
+        setPatientNhsId(patientId)
+      }
       let updatedAppointment = {
-        patientNhsId:patientNhsId ,
-        doctorId: doctorId,
+        patientNhsId:parseInt(patientNhsId) ,
+        doctorId: parseInt(doctorId),
           appointmentDate:date,
           appointmentTime: time
       }
       console.log(updatedAppointment)
-      // updateAppointment("hello",appointmentId)
+      updateAppointment(updatedAppointment,appointmentId)
+      showIsDisabled();
+      showIsUpdating();
       
-      // setName("")
-      // setType("")
-      // setAge("")
-      // setBreed("")
       
   }
   

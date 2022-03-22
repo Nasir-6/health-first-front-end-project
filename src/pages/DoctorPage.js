@@ -9,13 +9,22 @@ const DoctorPage = () => {
 
   const [doctorAppointmentsList, setDoctorAppointmentsList] = useState([]);
   const {doctorName} = useParams()
+  const[isUpdated, setIsUpdated] = useState(false)
   const getDoctorAppointmentsUrl = "http://localhost:8080/appointments/doctor/" + doctorName;
+  const [allPatients, setAllPatients]= useState([])
+
+//get all the patients 
+  useEffect( () =>
+  fetch("http://localhost:8080/patients")
+  .then(response => response.json())
+  .then(data => setAllPatients(data))
+  .catch(error => console.log(error)), []);
 
   useEffect( () =>
   fetch(getDoctorAppointmentsUrl)
   .then(response => response.json())
   .then(data => setDoctorAppointmentsList(data))
-  .catch(error => console.log(error)), []);
+  .catch(error => console.log(error)), [isUpdated]);
   
   const getAppointmentsList = () => {
     fetch(getDoctorAppointmentsUrl)
@@ -39,22 +48,25 @@ const DoctorPage = () => {
 
   }
 
-  const updateAppointment = (updatedAppointmenting,id) => {
-    console.log("hello")
-    console.log(updatedAppointmenting)
-    console.log(id)
-    
-    // console.log(e.currentTarget.id)
-    // const appointmentId = e.currentTarget.id
+  const updateAppointment = async (x,id) => {
+    console.log(x)
+    console.log(id);
+    const updateAppointmentUrl = "http://localhost:8080/appointments/" + id;
+    console.log(updateAppointmentUrl)
 
-    // const appointmentId = id
-    
-    // console.log(appointmentId);
-    // const updateAppointmentUrl = "http://localhost:8080/appointments/" + appointmentId;
-    // await fetch(updateAppointmentUrl ,
-    //   {
-    //     method:'PUT'
-    //   })
+    fetch(updateAppointmentUrl,
+      {
+        method:'PUT',
+        headers:{
+          'Content-type':'application/json'
+      },
+      body: JSON.stringify(x)
+      })
+    console.log("updating done")
+      // .then(res=> res.json())
+      //   .then(data=> setDoctorAppointmentsList([...doctorAppointmentsList,data]))
+      //   .catch(error => console.log(error))
+
 
     // getAppointmentsList();
 
