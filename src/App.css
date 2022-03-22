@@ -6,9 +6,16 @@
 }
 
 *{
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     font-family: sans-serif;
-    background-color: var(--secondary-color);
+    margin: 0;
+    padding: 0;   
+}
+
+.app{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--secondary-color);
 }
 
 /* General Navbar css */
@@ -16,19 +23,17 @@
 .navBar{
     display: flex;
     align-items: center;
-    background-color: var(--secondary-color);
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    justify-content: space-between;   
-    margin-left: 10%;
-    margin-right: 10%;
+    padding: 1rem 1rem;
+    justify-content: space-between;  
+    background-color: var(--logo-color); 
+    height: 12vh;
 }
 
 .firstImage{
     height: 5rem;
     width: 14rem;
     background: url("./images/logo.png");
-    background-size: 100%;
+    background-size: 102%;
     background-repeat: no-repeat;
 }
 
@@ -37,7 +42,7 @@
     width: 14rem;
     background-repeat: no-repeat;
     background: url("./images/logoInverse.png");
-    background-size: 100%;
+    background-size: 102%;
 
 }
 
@@ -51,10 +56,12 @@
 button{
 background-color:  var(--logo-color) ;
 color: white;
-height: 1.5rem;
-width: 5rem;
-font-size: 12px;
+/* height: 1.5rem;
+width: 5rem; */
+padding: 0.75rem 1rem;
+font-size: 1rem;
 border: none;
+border-radius: 0.8rem;
 justify-items: space-between;
 cursor: pointer;
 }
@@ -74,36 +81,66 @@ button:hover {
   }
 
 
-.doctorImage{
-    height: auto;
-    width: 80%;
+
+.slogan-container{
+  width: 100%;
+  height: 50vh;
+  background-image: url("./images/slogan-background.jpg");
+  background-size: cover;
 }
 
-h2{
-    margin-left: 10%;
-    margin-right: 10%;
+.slogan-overlay{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.slogan{
+  color: white;
+}
+
+.about-us{
+  background-color: var(--background-color);
+  padding: 1.75rem;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 28vh;
+}
+
+.about-us-text,
+.about-us-title{
+  color: var(--dark-color);
+  max-width: 600px;
+}
+
+.about-us-title{
+  padding-bottom: 0.5rem;
+}
+
+
 
 /*Footer CSS*/
 .footer{
-    background-color:var(--secondary-color);
+    background-color:var(--dark-color);
     align-items: center;
     justify-content: space-between;
-    margin-left: 10%;
-    margin-right: 10%;
+    padding: 0.5rem 2rem;
+    height: 10vh;
 }
 
-p{
-    margin: .5rem;
-    background-color: var(--secondary-color);
-    font-size: .5rem;
-    color: var(--logo-color);
+.footer p{
+    color: var(--secondary-color);
+    font-size: 0.8rem;
 }
 
 .logoInverse{
-    height: 2rem;
-    width: 6rem;
-    margin: .5rem;
+    height: 3rem;
+    width: auto;
 }
 
 /* Appointments CSS */
