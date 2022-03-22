@@ -1,8 +1,12 @@
 import React from 'react'
+import logoInverse from '../images/logoInverse.png'
 
 const Footer = () => {
   return (
-    <h2>Footer</h2>
+    <body className='footer'>
+    <p>© HealthFirst copyright</p>
+    <img src = {logoInverse} className='logoInverse'></img>
+    </body>
   )
 }
 
