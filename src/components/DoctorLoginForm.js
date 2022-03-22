@@ -65,8 +65,9 @@ const DoctorLoginForm = () => {
 
   return (
     <>
-      <form onSubmit={handleFormSubmit}>
-        <label htmlFor="doctorName">Name:</label>
+      <form onSubmit={handleFormSubmit} className="doctor-login-form">
+        <div className="name-input-container">
+        <label htmlFor="doctorName">Name</label>
         <input
           type="text"
           id="doctorName"
@@ -74,8 +75,10 @@ const DoctorLoginForm = () => {
           value={doctorName}
           onChange={handleDoctorNameChange}
         />
+        </div>
 
-        <label htmlFor="doctorId">Id:</label>
+        <div className="id-input-container">
+        <label htmlFor="doctorId" className="id-label">ID</label>
         <input
           type="number"
           id="doctorId"
@@ -83,11 +86,12 @@ const DoctorLoginForm = () => {
           value={doctorId}
           onChange={handleDoctorIdChange}
         />
+        </div>
         
 
         <p className="invalidText">{invalidTextWarning}</p>
 
-        <input type="submit" value="Login" />
+        <input type="submit" value="Login" className="button" />
       </form>
     </>
   );

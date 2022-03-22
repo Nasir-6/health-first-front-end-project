@@ -5,7 +5,7 @@ import {useState} from 'react'
 
 const Login = () => {
 
-    //State for whether loggin in as Doctor or Patient
+    //State for whether login in as Doctor or Patient
     const [isDoctor, setIsDoctor] = useState(true);
 
   const handleRadioChange = (event) => {
@@ -20,21 +20,36 @@ const Login = () => {
 
 
   return (
+    <div className='login-page'>
     <div className="login-card">
+      <div className='login-card-left'>
+      
+      </div>
+      
+    <div className="login-card-right">
+
       <h2>Login</h2>
 
-      <form>
-        <p>Login as a:</p>
+      <form className='radio-container'>
+        {/* <p>Login as a:</p> */}
 
+        <div className='doctor-radio'>
         <input type="radio" id="doctorChoice" name="doctor" value="doctor" checked={isDoctor === true} onChange={handleRadioChange}/>
         <label htmlFor="doctorChoice">Doctor</label>
+        </div>
 
+        <div className='patient-radio'>
         <input type="radio" id="patientChoice" name="patient" value="patient" checked={isDoctor === false} onChange={handleRadioChange} />
         <label htmlFor="patientChoice">Patient</label>
+        </div>
+      
+
       </form>
 
       {isDoctor ? <DoctorLoginForm /> : <PatientLoginForm />}
 
+      </div>
+    </div>
     </div>
   );
 }
