@@ -39,11 +39,35 @@ const DoctorPage = () => {
 
   }
 
+  const updateAppointment = (updatedAppointmenting,id) => {
+    console.log("hello")
+    console.log(updatedAppointmenting)
+    console.log(id)
+    
+    // console.log(e.currentTarget.id)
+    // const appointmentId = e.currentTarget.id
+
+    // const appointmentId = id
+    
+    // console.log(appointmentId);
+    // const updateAppointmentUrl = "http://localhost:8080/appointments/" + appointmentId;
+    // await fetch(updateAppointmentUrl ,
+    //   {
+    //     method:'PUT'
+    //   })
+
+    // getAppointmentsList();
+
+  }
+
+  
+
   return (
     <>
     <h2 id="doctor-welcome">Hi Dr {doctorName}</h2> 
     <DoctorAppointmentsContainer doctorAppointmentsList={doctorAppointmentsList}
-    handleDeleteAppointment={deleteAppointment}/>
+    handleDeleteAppointment={deleteAppointment} 
+    updateAppointment={updateAppointment}/>
     </>
   )
 }
