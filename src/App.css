@@ -108,7 +108,7 @@ p{
 
 /* Appointments CSS */
 .doctor-Appointment{
-  background-color: #E34A6F;
+  background-color: #4b8ec6;
   border: black solid;
   padding: 0.5rem;
   margin:0.5rem;
@@ -128,11 +128,13 @@ p{
 .delete-btn-position{
   display: flex;
   justify-content: flex-end;
+  background-color: #4b8ec6;
 }
 
 .update-btn-position{
   display: flex;
   justify-content: flex-end;
+  background-color: #4b8ec6;
 }
 
 #doctor-welcome{
@@ -142,6 +144,21 @@ p{
 #doctor-appointments-title{
   text-align: center;
 }
+
+.delete-btn{
+  background-color: #4b8ec6;
+}
+.doctor-appointment-content{
+  background-color: #4b8ec6;
+  font-weight: bold;
+  font-size: medium;
+  color: #1C2541;
+}
+.delete-btn-change-color{
+  background-color: #4b8ec6;
+}
+
+
 
 
 

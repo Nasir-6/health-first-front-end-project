@@ -67,15 +67,15 @@ const handleTimeChange = (event) => {
   return (
     <article className='doctor-Appointment'>
       <div className='delete-btn-position'><DeleteButton id = {id} deleteButtonClick={handleDeleteAppointment}/></div>
-        <p>Patient: {patientName}</p>
+        <p className='doctor-appointment-content'>Patient:</p>
         <input value={patientName} disabled />
         {/* {!isDisabled? <><p>Patient id</p>
         <input value={patientId} disabled={isDisabled} onChange={handlePatientIdChange} />
         <input type="submit" value="find" onClick={filterPatientId} />
         </>: console.log("disabled ")} */}
-        <p>Date:</p>
+        <p className='doctor-appointment-content'>Date:</p>
         <input value={date} disabled={isDisabled} onChange={handleDateChange}/>
-        <p>Time:</p>
+        <p className='doctor-appointment-content'>Time:</p>
         <input value={time} disabled={isDisabled} onChange={handleTimeChange}/>
         <div className='update-btn-position'> <UpdateButton showIsDisabled={showIsDisabled} updateAppointment={updateAppointment} id = {id}  date={date} time={time} /> </div>
         
