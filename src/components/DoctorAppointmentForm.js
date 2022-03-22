@@ -14,25 +14,17 @@ function DoctorAppointmentForm({patientList}) {
     const handleDateChange = (e) => {
         setDate(e.target.value)
     }
-    const handlePatientNameChange = (e) => {
+    const handlePatientNameChange = async (e) => {
         
         console.log("hello")
-    //    console.log(e.target.value)
-        console.log(patientName)
-        console.log(e.target.options[e.target.selectedIndex].text)
-        const name = e.target.options[e.target.selectedIndex].text
-        console.log(name)
-        setPatientName(name)
-        console.log(patientName)
-        e.preventDefault(); 
-
-        // console.log(e.target.options[e.target.selectedIndex].text);  //
-        // const name=e.target.options[e.target.selectedIndex].text 
+       console.log(e.target.value)
+        console.log(`patient name before settiing ${patientName}`)
+        // console.log(e.target.options[e.target.selectedIndex].text)
+        const name = e.target.value
         // console.log(name)
-        // e.target.options[e.target.selectedIndex].selected = true 
-        
-        // setPatientName(name)
-        
+        setPatientName(name)
+         console.log(`patient name after settiing ${patientName}`)
+        // e.preventDefault(); 
     }
 
   return (
