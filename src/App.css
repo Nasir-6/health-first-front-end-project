@@ -60,8 +60,8 @@ color: white;
 width: 5rem; */
 padding: 0.75rem 1rem;
 font-size: 1rem;
-border: none;
 border-radius: 0.8rem;
+border: none;
 justify-items: space-between;
 cursor: pointer;
 }
@@ -148,11 +148,14 @@ button:hover, .button:hover {
     display: flex;
     flex-direction: column;
     background-color: var(--secondary-color);
+    padding: 1rem 5rem 5rem 2rem;
+    align-items: center;
+    min-height: 80vh;
 }
 
-.doctor-welcome{
+#doctor-welcome{
     color: var(--dark-color);
-    align-self: center;
+    text-align: center;
     padding-top: 2rem;
 }
 
@@ -166,11 +169,13 @@ button:hover, .button:hover {
   display:flex;
   flex-direction: column;
   padding: 3rem;
-  margin: 5rem;
   margin-top: 2rem;
   border-radius: 25px;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .doctor-appointment-card{
@@ -181,6 +186,7 @@ button:hover, .button:hover {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     display: flex;
     height: 20vh;
+    max-width: 1200px;
   }
 
   .appointment-card-right{
@@ -223,43 +229,6 @@ button:hover, .button:hover {
     background-color: #99c9ee32;
     /* width: 100%; */
 }
-
-.delete-btn-position{
-  display: flex;
-  justify-content: flex-end;
-  background-color: #4b8ec6;
-}
-
-.update-btn-position{
-  display: flex;
-  justify-content: flex-end;
-  background-color: #4b8ec6;
-}
-
-
-/* #doctor-welcome{
-  text-align: center;
-}
-
-#doctor-appointments-title{
-  text-align: center;
-}
-
-.delete-btn{
-  background-color: #4b8ec6;
-}
-.delete-btn:hover{
-  background-color:#1C2541;;
-}
-.doctor-appointment-content{
-  background-color: #4b8ec6;
-  font-weight: bold;
-  font-size: medium;
-  color: #1C2541;
-}
-.delete-btn-change-color{
-  background-color: #4b8ec6;
-} */
 
 
 /* Login page CSS */
