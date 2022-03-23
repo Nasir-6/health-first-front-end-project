@@ -13,7 +13,7 @@ import Footer from './containers/Footer';
 function App() {
 
   //Make isLogged in state here - so can share with navbar and update using login
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   // FUnction to pass down to login/navbar buttons - loginStatus is either true or false
   // Chnage name to update Login Status
