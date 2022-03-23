@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Navbar from './containers/Navbar'
 import DoctorPage from './pages/DoctorPage'
@@ -22,6 +22,24 @@ function App() {
   }
 
   const[currentUser, setCurrentUser] = useState(null)
+  const isMounted = useRef(false); 
+
+
+
+
+  useEffect(() => {
+    if (isMounted.current){
+      setCurrentUser(JSON.parse(window.sessionStorage.getItem('currentUser')));
+    }else{
+      isMounted.current=true
+    }
+    
+  }, []);
+
+  useEffect(() => {
+    window.sessionStorage.setItem('currentUser', currentUser);
+  }, [currentUser]);
+
 
   const updateCurrentUser = (newUser) => {
     if(newUser === null){
@@ -44,7 +62,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home/>} />
           {/* <Route exact path="/doctor/:doctorName" element={<DoctorPage/>} /> */}
-          <Route exact path="/doctor/:doctorId" element={<DoctorPage/>} />
+          <Route exact path="/doctor/:doctorId" element={<DoctorPage currentDoctor={currentUser}/>} />
           <Route exact path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} updateCurrentUser={updateCurrentUser}/>} />
           <Route exact path="/signup" element={<SignUp/>} />
           <Route exact path="/patient" element={<PatientPage/>} />

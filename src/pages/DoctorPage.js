@@ -5,10 +5,11 @@ import DeleteButton from '../components/DeleteButton';
 import DoctorAppointmentsContainer from '../containers/DoctorAppointmentsContainer';
 import DoctorFormContainer from '../containers/DoctorFormContainer';
 
-const DoctorPage = () => {
+const DoctorPage = ({currentDoctor}) => {
 
 
   const [doctorAppointmentsList, setDoctorAppointmentsList] = useState([]);
+  const [isCorrectUser, setIsCorrectUser]= useState(false);
   const [patientList, setPatientList] = useState([]); 
   // const {doctorName} = useParams()
   const {doctorId} = useParams()
@@ -22,6 +23,19 @@ const DoctorPage = () => {
       .catch(error => console.log(error));
   },[])
   
+  useEffect(() => {
+    console.log(doctorId)
+    console.log(currentDoctor)
+    if(currentDoctor===null){
+
+      setIsCorrectUser(false)
+    }else if(doctorId==currentDoctor.id){
+      setIsCorrectUser(true);
+    }else if (doctorId!=currentDoctor.id){
+      setIsCorrectUser(false);
+    }
+
+  },[doctorId])
   
   
 
@@ -81,13 +95,17 @@ const DoctorPage = () => {
 
   return (
     <>
+    {isCorrectUser? 
+
+    <> 
     <h2 id="doctor-welcome">Hi Dr {doctorId}</h2> 
     <DoctorAppointmentsContainer doctorAppointmentsList={doctorAppointmentsList}
     handleDeleteAppointment={deleteAppointment} 
     updateAppointment={updateAppointment}
     />
     <DoctorFormContainer patientList = {patientList}/> 
-    </>
+    </>:<h2> Incorrect user- Please login again </h2>}
+</>
   )
 }
 
