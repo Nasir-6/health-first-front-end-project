@@ -45,11 +45,22 @@ const DoctorLoginForm = () => {
     
             // Check if Doctor is DB!!
             const doctorInDb = await getDoctorById(doctorId);
+            console.log(doctorInDb)
+            console.log(doctorInDb === null);
+            console.log(doctorInDb === undefined );
+            console.log(doctorInDb.status === 404);
+            
+            
 
-            if(doctorInDb === null || doctorInDb === undefined || doctorInDb.status == 404){
-                setInvalidTextWarning("Invalid Name or Id");
+            
+
+            if(doctorInDb === null || doctorInDb === undefined || doctorInDb.status === 404){
+                setInvalidTextWarning("Invalid name or ID");
                 return
-            } else if(doctorInDb.doctorName.split(" ")[1].toLowerCase() === doctorName.toLowerCase()){
+            } else if(doctorInDb.doctorName.split(" ")[1].toLowerCase() != doctorName.toLowerCase()){
+                setInvalidTextWarning("Incorrect name or ID");
+                return
+            }else if(doctorInDb.doctorName.split(" ")[1].toLowerCase() === doctorName.toLowerCase()){
                 setInvalidTextWarning(" ");
                 navigate(`/doctor/${doctorInDb.doctorId}`);
                 return
