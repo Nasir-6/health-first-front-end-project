@@ -5,7 +5,7 @@ import SignUpButton from '../components/SignUpButton'
 import LogoutButton from '../components/LogoutButton'
 
 
-const Navbar = ({ isLoggedIn, setLoginStatus}) => {
+const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
 
   
   return (
@@ -20,7 +20,7 @@ const Navbar = ({ isLoggedIn, setLoginStatus}) => {
   
 
     <div className='navRight'>
-    {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus}/> : <LoginButton />}
+    {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/> : <LoginButton />}
     {isLoggedIn ? <></> : <SignUpButton/>}
     
     

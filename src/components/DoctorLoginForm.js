@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
-const DoctorLoginForm = ({setIsLoggedIn}) => {
+const DoctorLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
 
         // Set all states to empty at start
         const [doctorName, setDoctorName] = useState("");
@@ -55,6 +55,11 @@ const DoctorLoginForm = ({setIsLoggedIn}) => {
             }else if(doctorInDb.doctorName.split(" ")[1].toLowerCase() === doctorName.toLowerCase()){
                 setInvalidTextWarning(" ");
                 setIsLoggedIn(true)
+                // Also set the currentUser
+                updateCurrentUser({
+                    name: doctorName,
+                    id: doctorId
+                })
                 navigate(`/doctor/${doctorInDb.doctorId}`);
                 return
             } else {

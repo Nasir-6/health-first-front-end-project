@@ -16,21 +16,36 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
 
   // FUnction to pass down to login/navbar buttons - loginStatus is either true or false
+  // Chnage name to update Login Status
   const setLoginStatus = (loginStatus) => {
     setIsLoggedIn(loginStatus);
+  }
+
+  const[currentUser, setCurrentUser] = useState(null)
+
+  const updateCurrentUser = (newUser) => {
+    if(newUser === null){
+      setCurrentUser(null)
+    } else {
+      setCurrentUser({
+        name: newUser.name,
+        id: newUser.id
+      });
+    }
+    
   }
 
   return (
     <Router>
       <div className="app">
-        <Navbar isLoggedIn={isLoggedIn} setLoginStatus={setLoginStatus}/>
+        <Navbar isLoggedIn={isLoggedIn} setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/>
         {/* <i class="fa-solid fa-x fa-3x"></i> */}
 
         <Routes>
           <Route exact path="/" element={<Home/>} />
           {/* <Route exact path="/doctor/:doctorName" element={<DoctorPage/>} /> */}
           <Route exact path="/doctor/:doctorId" element={<DoctorPage/>} />
-          <Route exact path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+          <Route exact path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} updateCurrentUser={updateCurrentUser}/>} />
           <Route exact path="/signup" element={<SignUp/>} />
           <Route exact path="/patient" element={<PatientPage/>} />
         </Routes>
