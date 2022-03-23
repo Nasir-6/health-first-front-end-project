@@ -3,7 +3,7 @@ import PatientLoginForm from '../components/PatientLoginForm';
 import DoctorLoginForm from '../components/DoctorLoginForm';
 import {useState} from 'react'
 
-const Login = () => {
+const Login = ({setIsLoggedIn}) => {
 
     //State for whether login in as Doctor or Patient
     const [isDoctor, setIsDoctor] = useState(true);
@@ -46,7 +46,7 @@ const Login = () => {
 
       </form>
 
-      {isDoctor ? <DoctorLoginForm /> : <PatientLoginForm />}
+      {isDoctor ? <DoctorLoginForm setIsLoggedIn={setIsLoggedIn}/> : <PatientLoginForm />}
 
       </div>
     </div>
