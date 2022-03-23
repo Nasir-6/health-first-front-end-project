@@ -12,7 +12,7 @@ const DoctorPage = () => {
   const [patientList, setPatientList] = useState([]); 
   // const {doctorName} = useParams()
   const {doctorId} = useParams()
-  const[isUpdated, setIsUpdated] = useState(false)
+  // const[isUpdated, setIsUpdated] = useState(false)
   const getDoctorAppointmentsUrl = "http://localhost:8080/appointments/doctorId/" + doctorId;
 
  useEffect(() => {
@@ -22,14 +22,12 @@ const DoctorPage = () => {
       .catch(error => console.log(error));
   },[])
   
-  
-  
 
   useEffect( () =>
   fetch(getDoctorAppointmentsUrl)
   .then(response => response.json())
   .then(data => setDoctorAppointmentsList(data))
-  .catch(error => console.log(error)), [isUpdated]);
+  .catch(error => console.log(error)), [doctorAppointmentsList]);
   
   const getAppointmentsList = () => {
     fetch(getDoctorAppointmentsUrl)
@@ -68,14 +66,24 @@ const DoctorPage = () => {
       body: JSON.stringify(x)
       })
     console.log("updating done")
-      // .then(res=> res.json())
-      //   .then(data=> setDoctorAppointmentsList([...doctorAppointmentsList,data]))
-      //   .catch(error => console.log(error))
-
-
-    // getAppointmentsList();
 
   }
+
+  const addAppointment= (newAppointment) => {
+    fetch ("http://localhost:8080/appointments", {
+        method: "POST", 
+        headers:{
+            'Content-type':'application/json'
+        },
+        body: JSON.stringify(newAppointment)
+
+        
+    })
+    .then(res=> res.json())
+    .then(data=> console.log(data))
+    .then(res => setDoctorAppointmentsList([...doctorAppointmentsList,newAppointment]))
+
+}
 
   
 
@@ -86,7 +94,7 @@ const DoctorPage = () => {
     handleDeleteAppointment={deleteAppointment} 
     updateAppointment={updateAppointment}
     />
-    <DoctorFormContainer patientList = {patientList}/> 
+    <DoctorFormContainer patientList = {patientList} handleAppointmentSubmission ={addAppointment}/> 
     </>
   )
 }
