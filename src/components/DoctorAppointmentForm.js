@@ -27,6 +27,12 @@ function DoctorAppointmentForm({patientList}) {
         // e.preventDefault(); 
     }
 
+    function onSubmission (event){
+        event.preventDefault(); 
+       
+
+    }
+
   return (
     <>
     <div>DoctorAppointmentForm</div>
@@ -47,7 +53,7 @@ function DoctorAppointmentForm({patientList}) {
         <input value ={date} onChange={handleDateChange}/>
         <label> Time </label>
         <input value ={time} onChange={handleTimeChange}/>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" onClick={onSubmission} />
       </form>
     </>
 
