@@ -184,28 +184,45 @@ button:hover, .button:hover {
     height: 20vh;
   }
 
-  .appointment-card-left{
+  .appointment-card-right{
     height: 100%;
     width: 50%;
-    align-items: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+     gap: 4rem;
+     padding: 1rem;
   }
 
-  .appointment-card-right{
-    width: 50%;
+  .appointment-card-left{
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    justify-content: space-between;
+    padding: 1rem;
   }
 
-  .patient-info, .date-info, .time-info{
+  .patient-info, .date-info, .time-info, .id-info{
       display: flex;
-      gap: 2rem
+      gap: 10rem;
+      justify-content: center;
   }
 
-.patient-input, .date-input, .time-input{
+.patient-input, .date-input, .time-input, .id-input{
     background-color: white;
+    transition: 0.3s all;
+    height: 2rem;
+    width: 50%;
+    border-radius: .5rem;
+    border: none;
+    /* transition: width 0.4s ease-in-out; */
+}
 
+.patient-input:hover, .date-input:hover, .time-input:hover, .id-input:hover{
+    background-color: #99c9ee32;
+    /* width: 100%; */
 }
 
 .delete-btn-position{
