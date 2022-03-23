@@ -10,10 +10,29 @@ const DoctorPage = () => {
 
   const [doctorAppointmentsList, setDoctorAppointmentsList] = useState([]);
   const [patientList, setPatientList] = useState([]); 
+  const [doctorName, setDoctorName] = useState("")
   // const {doctorName} = useParams()
   const {doctorId} = useParams()
   // const[isUpdated, setIsUpdated] = useState(false)
   const getDoctorAppointmentsUrl = "http://localhost:8080/appointments/doctorId/" + doctorId;
+
+  useEffect(() => {
+    fetch("http://localhost:8080/doctors")
+      .then(response => response.json())
+      .then(data => {
+        return(
+          data.filter((d) => {
+            if(d.doctorId==doctorId){
+              console.log(d.doctorName)
+              setDoctorName(d.doctorName);
+            }
+          })
+        )
+      })
+      .catch(error => console.log(error));
+  },[])
+
+  
 
  useEffect(() => {
     fetch("http://localhost:8080/patients")
@@ -89,7 +108,7 @@ const DoctorPage = () => {
 
   return (
     <>
-    <h2 id="doctor-welcome">Hi Dr {doctorId}</h2> 
+    <h2 id="doctor-welcome">Hi {doctorName}</h2> 
     <DoctorAppointmentsContainer doctorAppointmentsList={doctorAppointmentsList}
     handleDeleteAppointment={deleteAppointment} 
     updateAppointment={updateAppointment}
