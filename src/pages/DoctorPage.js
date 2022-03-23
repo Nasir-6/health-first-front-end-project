@@ -3,31 +3,50 @@ import {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import DeleteButton from '../components/DeleteButton';
 import DoctorAppointmentsContainer from '../containers/DoctorAppointmentsContainer';
+import DoctorFormContainer from '../containers/DoctorFormContainer';
 
 const DoctorPage = () => {
 
 
   const [doctorAppointmentsList, setDoctorAppointmentsList] = useState([]);
-//   const {doctorName} = useParams()
+  const [patientList, setPatientList] = useState([]); 
+  const [doctorName, setDoctorName] = useState("")
+  // const {doctorName} = useParams()
   const {doctorId} = useParams()
-  const[isUpdated, setIsUpdated] = useState(false)
+  // const[isUpdated, setIsUpdated] = useState(false)
   const getDoctorAppointmentsUrl = "http://localhost:8080/appointments/doctorId/" + doctorId;
-  const [allPatients, setAllPatients]= useState([])
 
-//get all the patients 
-  useEffect( () =>
-  fetch("http://localhost:8080/patients")
-  .then(response => response.json())
-  .then(data => setAllPatients(data))
-  .catch(error => console.log(error)), []);
+  useEffect(() => {
+    fetch("http://localhost:8080/doctors")
+      .then(response => response.json())
+      .then(data => {
+        return(
+          data.filter((d) => {
+            if(d.doctorId==doctorId){
+              console.log(d.doctorName)
+              setDoctorName(d.doctorName);
+            }
+          })
+        )
+      })
+      .catch(error => console.log(error));
+  },[])
 
+  
 
-  // See if can replace replace function in useEffect with getAppointmentsList
+ useEffect(() => {
+    fetch("http://localhost:8080/patients")
+      .then(response => response.json())
+      .then(data => setPatientList(data))
+      .catch(error => console.log(error));
+  },[])
+  
+
   useEffect( () =>
   fetch(getDoctorAppointmentsUrl)
   .then(response => response.json())
   .then(data => setDoctorAppointmentsList(data))
-  .catch(error => console.log(error)), [isUpdated]);
+  .catch(error => console.log(error)), [doctorAppointmentsList]);
   
   const getAppointmentsList = () => {
     fetch(getDoctorAppointmentsUrl)
@@ -66,23 +85,34 @@ const DoctorPage = () => {
       body: JSON.stringify(x)
       })
     console.log("updating done")
-      // .then(res=> res.json())
-      //   .then(data=> setDoctorAppointmentsList([...doctorAppointmentsList,data]))
-      //   .catch(error => console.log(error))
-
-
-    // getAppointmentsList();
 
   }
 
+  const addAppointment= (newAppointment) => {
+    fetch ("http://localhost:8080/appointments", {
+        method: "POST", 
+        headers:{
+            'Content-type':'application/json'
+        },
+        body: JSON.stringify(newAppointment)
+
+        
+    })
+    .then(res=> res.json())
+    .then(data=> console.log(data))
+    .then(res => setDoctorAppointmentsList([...doctorAppointmentsList,newAppointment]))
+
+}
+
   
-// Change Id back to Name once sorted
+
   return (
     <div className="doctor-page-container">
-    <h2 className="doctor-welcome">Welcome Back Dr {doctorId}</h2> 
+    <h2 data-testid="doctor-greeting" id="doctor-welcome">{"Hi doctor " + doctorId}</h2> 
     <DoctorAppointmentsContainer doctorAppointmentsList={doctorAppointmentsList}
     handleDeleteAppointment={deleteAppointment} 
     updateAppointment={updateAppointment}/>
+    <DoctorFormContainer patientList = {patientList} handleAppointmentSubmission ={addAppointment}/> 
     </div>
   )
 }

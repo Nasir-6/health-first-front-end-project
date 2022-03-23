@@ -31,7 +31,7 @@ const FinaliseUpdateButton= ({updateAppointment, id, date, time, patientId, show
     fetchingNhsId(url)
     fetchingDoctorId(url)
     console.log(id)
-  })
+  },[])
 
 
 

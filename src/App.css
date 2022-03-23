@@ -14,7 +14,7 @@
 
 .app{
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--secondary-color);
 }
 
@@ -144,7 +144,6 @@ button:hover, .button:hover {
 }
 
 /* Appointments CSS */
-
 .doctor-page-container{
     display: flex;
     flex-direction: column;
@@ -228,14 +227,39 @@ button:hover, .button:hover {
 .delete-btn-position{
   display: flex;
   justify-content: flex-end;
+  background-color: #4b8ec6;
 }
 
 .update-btn-position{
   display: flex;
   justify-content: flex-end;
+  background-color: #4b8ec6;
 }
 
 
+/* #doctor-welcome{
+  text-align: center;
+}
+
+#doctor-appointments-title{
+  text-align: center;
+}
+
+.delete-btn{
+  background-color: #4b8ec6;
+}
+.delete-btn:hover{
+  background-color:#1C2541;;
+}
+.doctor-appointment-content{
+  background-color: #4b8ec6;
+  font-weight: bold;
+  font-size: medium;
+  color: #1C2541;
+}
+.delete-btn-change-color{
+  background-color: #4b8ec6;
+} */
 
 
 /* Login page CSS */

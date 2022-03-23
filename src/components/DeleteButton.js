@@ -5,7 +5,7 @@ const DeleteButton= ({deleteButtonClick, id}) =>  {
   return (
     <>
     <button className='delete-btn' id={id} onClick={(e)=>deleteButtonClick(e)} >
-        <i className="fa-solid fa-x"></i>
+        <i className="fa-solid fa-x delete-btn-change-color"   ></i>
     </button>
     </>
   )
