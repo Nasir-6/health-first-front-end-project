@@ -44,15 +44,7 @@ const DoctorLoginForm = () => {
             }
     
             // Check if Doctor is DB!!
-            const doctorInDb = await getDoctorById(doctorId);
-            console.log(doctorInDb)
-            console.log(doctorInDb === null);
-            console.log(doctorInDb === undefined );
-            console.log(doctorInDb.status === 404);
-            
-            
-
-            
+            const doctorInDb = await getDoctorById(doctorId);            
 
             if(doctorInDb === null || doctorInDb === undefined || doctorInDb.status === 404){
                 setInvalidTextWarning("Invalid name or ID");

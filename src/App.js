@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Navbar from './containers/Navbar'
 import DoctorPage from './pages/DoctorPage'
@@ -12,17 +12,18 @@ import Footer from './containers/Footer';
 
 function App() {
 
-  // useEffect(() => {
-  //   fetch("http://localhost:8080/appointments/bloodtype/A")
-  //   .then(response => response.json())
-  //   .then(data => console.log(data))
-  //   .catch(error => console.error(error))
-  // }, [])
+  //Make isLogged in state here - so can share with navbar and update using login
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
+
+  // FUnction to pass down to login/navbar buttons - loginStatus is either true or false
+  const setLoginStatus = (loginStatus) => {
+    setIsLoggedIn(loginStatus);
+  }
 
   return (
     <Router>
       <div className="app">
-        <Navbar />
+        <Navbar isLoggedIn={isLoggedIn} setLoginStatus={setLoginStatus}/>
         {/* <i class="fa-solid fa-x fa-3x"></i> */}
 
         <Routes>

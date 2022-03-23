@@ -2,8 +2,10 @@ import React from 'react'
 import LoginButton from '../components/LoginButton'
 import { Link } from 'react-router-dom'
 import SignUpButton from '../components/SignUpButton'
+import LogoutButton from '../components/LogoutButton'
 
-const Navbar = () => {
+
+const Navbar = ({ isLoggedIn, setLoginStatus}) => {
 
   
   return (
@@ -18,8 +20,10 @@ const Navbar = () => {
   
 
     <div className='navRight'>
-    <LoginButton/>
-    <SignUpButton/>
+    {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus}/> : <LoginButton />}
+    {isLoggedIn ? <></> : <SignUpButton/>}
+    
+    
     </div>
     </header>
   )
