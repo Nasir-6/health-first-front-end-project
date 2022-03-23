@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Navbar from './containers/Navbar'
 import DoctorPage from './pages/DoctorPage'
@@ -22,18 +22,11 @@ function App() {
   }
 
   const[currentUser, setCurrentUser] = useState(null)
-  const isMounted = useRef(false); 
-
-
+  
 
 
   useEffect(() => {
-    if (isMounted.current){
-      setCurrentUser(JSON.parse(window.sessionStorage.getItem('currentUser')));
-    }else{
-      isMounted.current=true
-    }
-    
+    setCurrentUser(JSON.parse(window.sessionStorage.getItem('currentUser')));
   }, []);
 
   useEffect(() => {
