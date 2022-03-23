@@ -144,22 +144,68 @@ button:hover, .button:hover {
 }
 
 /* Appointments CSS */
-.doctor-Appointment{
-  background-color: #E34A6F;
-  border: black solid;
-  padding: 0.5rem;
-  margin:0.5rem;
-  border-radius: 25px;
-  
+
+.doctor-page-container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color);
 }
+
+.doctor-welcome{
+    color: var(--dark-color);
+    align-self: center;
+    padding-top: 2rem;
+}
+
+.doctor-appointments-title{
+    color: var(--dark-color);
+    align-self: center;
+}
+
 
 .doctor-appointments-container{
   display:flex;
   flex-direction: column;
-  padding: 2rem;
-  border: solid black;
-  margin: 0.5rem;
+  padding: 3rem;
+  margin: 5rem;
+  margin-top: 2rem;
   border-radius: 25px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.doctor-appointment-card{
+    background-color: var(--secondary-color);
+    padding: 0.5rem;
+    margin:0.5rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    display: flex;
+    height: 20vh;
+  }
+
+  .appointment-card-left{
+    height: 100%;
+    width: 50%;
+    align-items: space-between;
+  }
+
+  .appointment-card-right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .patient-info, .date-info, .time-info{
+      display: flex;
+      gap: 2rem
+  }
+
+.patient-input, .date-input, .time-input{
+    background-color: white;
+
 }
 
 .delete-btn-position{
@@ -170,14 +216,6 @@ button:hover, .button:hover {
 .update-btn-position{
   display: flex;
   justify-content: flex-end;
-}
-
-#doctor-welcome{
-  text-align: center;
-}
-
-#doctor-appointments-title{
-  text-align: center;
 }
 
 

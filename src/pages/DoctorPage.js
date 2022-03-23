@@ -78,12 +78,12 @@ const DoctorPage = () => {
   
 // Change Id back to Name once sorted
   return (
-    <>
-    <h2 id="doctor-welcome">Hi Dr {doctorId}</h2> 
+    <div className="doctor-page-container">
+    <h2 className="doctor-welcome">Welcome Back Dr {doctorId}</h2> 
     <DoctorAppointmentsContainer doctorAppointmentsList={doctorAppointmentsList}
     handleDeleteAppointment={deleteAppointment} 
     updateAppointment={updateAppointment}/>
-    </>
+    </div>
   )
 }
 

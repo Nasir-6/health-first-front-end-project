@@ -65,21 +65,36 @@ const handleTimeChange = (event) => {
 
 
   return (
-    <article className='doctor-Appointment'>
-      <div className='delete-btn-position'><DeleteButton id = {id} deleteButtonClick={handleDeleteAppointment}/></div>
-        <p>Patient:</p>
-        <input value={patientName} disabled={isDisabled} onChange={handleNameChange} />
+    
+    <article className='doctor-appointment-card'>
+      <div className="appointment-card-right">
+        <div className="patient-info">
+        <p className='patient-title'>Patient:</p>
+
+        <input value={patientName} disabled={isDisabled} onChange={handleNameChange} className='patient-input'/>
         {!isDisabled? <><p>Patient id</p>
         <input value={patientId} disabled={isDisabled} onChange={handlePatientIdChange} />
         <input type="submit" value="find" onClick={filterPatientId} />
         </>: console.log("disabled ")}
-        <p>Date:</p>
-        <input value={date} disabled={isDisabled} onChange={handleDateChange}/>
-        <p>Time:</p>
-        <input value={time} disabled={isDisabled} onChange={handleTimeChange}/>
+        </div>
+
+        <div className="date-info">
+        <p className='date-title'>Date:</p>
+        <input value={date} disabled={isDisabled} onChange={handleDateChange} className="date-input"/>
+        </div>
+
+        <div className="time-info">
+        <p className='time-title'>Time:</p>
+        <input value={time} disabled={isDisabled} onChange={handleTimeChange} className="time-input"/>
+        </div>
+        </div>
+
+    <div className="appointment-card-left">
+        <div className='delete-btn-position'><DeleteButton id = {id} deleteButtonClick={handleDeleteAppointment}/></div>
         <div className='update-btn-position'> <UpdateButton showIsDisabled={showIsDisabled} updateAppointment={updateAppointment} id = {id}  date={date} time={time} patientId={patientId}/> </div>
-        
+        </div>
     </article>
+   
   )
 }
 
