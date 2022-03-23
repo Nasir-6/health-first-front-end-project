@@ -67,9 +67,9 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
           </select>
         </label>
         <label> Date</label>
-        <input value ={date} onChange={handleDateChange}/>
+        <input type ="date"value ={date} onChange={handleDateChange}/>
         <label> Time </label>
-        <input value ={time} onChange={handleTimeChange}/>
+        <input type ="time"value ={time} onChange={handleTimeChange}/>
         <input type="submit" value="Submit" onClick={onSubmission} />
       </form>
     </>
