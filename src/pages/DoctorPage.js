@@ -108,7 +108,7 @@ const DoctorPage = () => {
 
   return (
     <>
-    <h2 id="doctor-welcome">Hi {doctorName}</h2> 
+    <h2 data-testid="doctor-greeting" id="doctor-welcome">{"Hi doctor " + doctorId}</h2> 
     <DoctorAppointmentsContainer doctorAppointmentsList={doctorAppointmentsList}
     handleDeleteAppointment={deleteAppointment} 
     updateAppointment={updateAppointment}
