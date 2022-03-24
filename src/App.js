@@ -8,30 +8,45 @@ import Login from './pages/Login';
 import PatientPage from './pages/PatientPage';
 import SignUp from './pages/SignUp';
 import Footer from './containers/Footer';
+import { type } from '@testing-library/user-event/dist/type';
 
 
 function App() {
 
-  //Make isLogged in state here - so can share with navbar and update using login
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-  // FUnction to pass down to login/navbar buttons - loginStatus is either true or false
-  // Chnage name to update Login Status
-  const setLoginStatus = (loginStatus) => {
-    setIsLoggedIn(loginStatus);
-  }
+    //Make isLogged in state here - so can share with navbar and update using login
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    // useEffect to read in value on mount
+    useEffect(() => {
+      const isLoggedInFlagInSessionStorage = Boolean(sessionStorage.getItem('isLoggedIn'));
+      if(isLoggedInFlagInSessionStorage == true || isLoggedInFlagInSessionStorage == false){
+        setIsLoggedIn(isLoggedInFlagInSessionStorage);
+      }
+    }, []);
+    // useEffect to store isLoggedIn Flag 
+    useEffect(() => {
+      sessionStorage.setItem('isLoggedIn', isLoggedIn);
+    }, [isLoggedIn]);
+  
+  
+    // FUnction to pass down to login/navbar buttons - loginStatus is either true or false
+    // Chnage name to update Login Status
+    const setLoginStatus = (loginStatus) => {
+      setIsLoggedIn(loginStatus);
+    }
+    
+
 
   const[currentUser, setCurrentUser] = useState(null)
-  
-
-
   useEffect(() => {
-    setCurrentUser(JSON.parse(window.sessionStorage.getItem('currentUser')));
+    const currentUserInSessionStorage = JSON.parse(sessionStorage.getItem('currentUser'));
+    setCurrentUser(currentUserInSessionStorage);
   }, []);
 
   useEffect(() => {
-    window.sessionStorage.setItem('currentUser', currentUser);
+    sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
   }, [currentUser]);
+
 
 
   const updateCurrentUser = (newUser) => {
@@ -43,8 +58,9 @@ function App() {
         id: newUser.id
       });
     }
-    
   }
+
+
 
   return (
     <Router>

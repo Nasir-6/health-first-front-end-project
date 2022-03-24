@@ -1,3 +1,4 @@
+import { type } from '@testing-library/user-event/dist/type';
 import React from 'react'
 import {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
@@ -6,36 +7,53 @@ import DoctorAppointmentsContainer from '../containers/DoctorAppointmentsContain
 import DoctorFormContainer from '../containers/DoctorFormContainer';
 
 const DoctorPage = ({currentDoctor}) => {
+    
+    const [patientList, setPatientList] = useState([]);
+
+    const [isCorrectUser, setIsCorrectUser] = useState(false);
+
+    // once mounted get isCorrectFlag from sessionStorage and set it!! (convert and check if boolean)
+    useEffect(() => {
+        const isCorrectUserFlagInSessionStorage = Boolean(sessionStorage.getItem("isCorrectUser"))
+        if(typeof isCorrectUserFlagInSessionStorage == Boolean){
+            setIsCorrectUser(isCorrectUserFlagInSessionStorage)
+        }
+    }, [])
+    // use localStorage to persist state!!
+    // Store currentIndex when it changes
+    useEffect(() => {
+        sessionStorage.setItem('isCorrectUser', isCorrectUser);
+      }, [isCorrectUser]);
 
 
-  const [doctorAppointmentsList, setDoctorAppointmentsList] = useState([]);
-  const [isCorrectUser, setIsCorrectUser]= useState(false);
-  const [patientList, setPatientList] = useState([]); 
-  // const {doctorName} = useParams()
-  const {doctorId} = useParams()
-  const[isUpdated, setIsUpdated] = useState(false)
-  const getDoctorAppointmentsUrl = "http://localhost:8080/appointments/doctorId/" + doctorId;
 
- useEffect(() => {
-    fetch("http://localhost:8080/patients")
-      .then(response => response.json())
-      .then(data => setPatientList(data))
-      .catch(error => console.log(error));
-  },[])
-  
-  useEffect(() => {
-    console.log(doctorId)
-    console.log(currentDoctor)
-    if(currentDoctor===null){
+    const [doctorAppointmentsList, setDoctorAppointmentsList] = useState([]);
 
-      setIsCorrectUser(false)
-    }else if(doctorId==currentDoctor.id){
-      setIsCorrectUser(true);
-    }else if (doctorId!=currentDoctor.id){
-      setIsCorrectUser(false);
-    }
+    // const {doctorName} = useParams()
+    const { doctorId } = useParams();
+    const [isUpdated, setIsUpdated] = useState(false);
+    const getDoctorAppointmentsUrl =
+      "http://localhost:8080/appointments/doctorId/" + doctorId;
 
-  },[doctorId])
+    useEffect(() => {
+      fetch("http://localhost:8080/patients")
+        .then((response) => response.json())
+        .then((data) => setPatientList(data))
+        .catch((error) => console.log(error));
+    }, []);
+
+    useEffect(() => {
+      console.log(doctorId);
+      console.log(currentDoctor);
+      if (currentDoctor === null) {
+        setIsCorrectUser(false);
+      } else if (doctorId == currentDoctor.id) {
+        setIsCorrectUser(true);
+      } else if (doctorId != currentDoctor.id) {
+        setIsCorrectUser(false);
+      }
+    }, [doctorId, currentDoctor]);
+    // Had to run above useEffect when currentDoctor changes so update rendering!!!
   
   
 
@@ -95,16 +113,15 @@ const DoctorPage = ({currentDoctor}) => {
 
   return (
     <>
-    {isCorrectUser? 
-
+    {isCorrectUser ? 
     <> 
     <h2 id="doctor-welcome">Hi Dr {doctorId}</h2> 
     <DoctorAppointmentsContainer doctorAppointmentsList={doctorAppointmentsList}
     handleDeleteAppointment={deleteAppointment} 
-    updateAppointment={updateAppointment}
-    />
+    updateAppointment={updateAppointment}/>
     <DoctorFormContainer patientList = {patientList}/> 
-    </>:<h2> Incorrect user- Please login again </h2>}
+    </>
+    :<h2> Incorrect user- Please login again </h2>}
 </>
   )
 }
