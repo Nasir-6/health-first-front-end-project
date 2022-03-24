@@ -75,8 +75,10 @@ function App() {
           <Route exact path="/doctor/:doctorId" element={<DoctorPage currentDoctor={currentUser}/>} />
           <Route exact path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} updateCurrentUser={updateCurrentUser}/>} />
           <Route exact path="/signup" element={<SignUp/>} />
-          <Route exact path="/patient" element={<PatientPage/>} />
+          <Route exact path="/patient/:patientId" element={<PatientPage currentPatient={currentUser}/>} />
+
           <Route exact path="/aboutus" element={<AboutUsPage/>} />
+
         </Routes>
 
         <Footer/>
