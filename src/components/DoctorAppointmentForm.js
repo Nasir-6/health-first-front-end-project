@@ -85,7 +85,7 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
             <div className="patient-info">
               <label className='patient-title'> Patient: </label>
               <Select 
-                className='patient-input'
+                className='patient-select'
                 onChange={handleIdChange} 
                 options={patientOptions} 
               />
