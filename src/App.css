@@ -343,13 +343,38 @@ button:hover, .button:hover {
 
   /*About Us Page CSS*/
 
+  .about-us-page{
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .about-us-container{
-      height: 78vh;
-      display: flex;
-      justify-content: center;
+    display: flex;
+    width: 100%;
+    padding: 2rem 4rem;
+    justify-content: space-between;
+  }
+
+  .about-us-right{
+      width: 45%;
+      height: 50vh;
+      background-color: white;
+      border-radius: 2rem;
+  }
+
+  .about-us-left{
+      width: 45%;
+      background-color: white;
+      border-radius: 2rem;
   }
 
   .about-us-header{
-      padding: 3rem;
+      padding-top: 1.5rem;
+      padding-bottom: .5rem;
       color: var(--dark-color);
+  }
+
+  .subheader{
+    color: var(--logo-color);
   }
