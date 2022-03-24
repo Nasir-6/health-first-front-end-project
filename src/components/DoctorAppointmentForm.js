@@ -51,37 +51,46 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
   return (
   
     <>
-    {/* <form onSubmit={this.handleSubmit}> */}
-    <form>
-      <div className="form-card">
-        <div className="form-card-left">
-        <label> Patient: </label>
-          {/* <select value={this.state.value} onChange={this.handleChange}> */}
-          <select onChange={handlePatientIdChange} value={patientId}>
-              {patientList.map((patient)=> {
-                  return(
-                  <option key = {patient.patientNhsId} value = {patient.patientNhsId}>
-                    {patient.patientNhsId}: {patient.patientName}
+      {/* <form onSubmit={this.handleSubmit}> */}
+      <form>
+        <div className="form-card">
+          <div className="form-card-left">
+            <div className="patient-info">
+              <label className='patient-title'> Patient: </label>
+              {/* <select value={this.state.value} onChange={this.handleChange}> */}
+              <select className='patient-input' onChange={handlePatientIdChange} value={patientId}>
+                {patientList.map((patient) => {
+                  return (
+                    <option key={patient.patientNhsId} value={patient.patientNhsId}>
+                      {patient.patientNhsId}: {patient.patientName}
                     </option>
                   )
-              })}
-          </select>
-        
-        </div>
-        
-        <label> Date</label>
-        <input type ="date"value ={date} onChange={handleDateChange}/>
-        <label> Time </label>
-        <input type ="time"value ={time} onChange={handleTimeChange}/>
+                })}
+              </select>
+            </div>
 
-        <div className="form-card-right">
-        <input type="submit" value="Submit" onClick={onSubmission} />
-        </div>
+         
+
+          <div className="date-info">
+            <label className='date-title'> Date</label>
+            <input type="date" value={date} onChange={handleDateChange} className='date-input'/>
+          </div>
+
+          <div className="time-info">
+            <label className='time-title'> Time </label>
+            <input type="time" value={time} onChange={handleTimeChange} className='time-input'/>
+          </div>
+
+          </div>
+
+          <div className="form-card-right">
+            <button type="submit" value="Submit" onClick={onSubmission}>Submit</button>
+          </div>
         </div>
 
       </form>
-      
-      </>
+
+    </>
     
   )
 }
