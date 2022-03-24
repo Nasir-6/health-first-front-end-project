@@ -1,3 +1,4 @@
+
 :root{
   --logo-color: #4b8ec6;
   --dark-color: #1C2541;
@@ -7,7 +8,7 @@
 
 *{
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;   
 }
@@ -358,6 +359,7 @@ button:hover, .button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0rem 3rem 2rem;
   }
   .about-us-container{
     display: flex;
@@ -365,6 +367,8 @@ button:hover, .button:hover {
     min-height: 70vh;
     padding: 2rem 4rem;
     justify-content: space-between;
+     background-color: white;
+     border-radius: 2rem;
   }
 
   .about-us-right{
@@ -396,12 +400,13 @@ button:hover, .button:hover {
 
   .subheader{
     color: var(--logo-color);
+    padding-bottom: 1rem;
   }
 
   .laptop-image, .doctor-image{
-      height: 50%;
-      width: 50%;
-      border-radius: 1rem;
+      height: 80%;
+      width: 80%;
+      border-radius: 2rem;
   }
 
   .who-are-we{
@@ -411,4 +416,21 @@ button:hover, .button:hover {
   .about-info{
       display: flex;
       text-align: justify;
+      color: var(--dark-color);
+  }
+
+  .color-highlight{
+      color: var(--logo-color);
+      padding: 1rem;
+  }
+
+  .center{
+    display: flex;
+    text-align: justify;
+  }
+
+  .slogan-tag{
+      color: var(--logo-color);
+      padding: 1rem;
+      font-style: italic;
   }
