@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import DeleteButton from '../components/DeleteButton';
 import DoctorAppointmentsContainer from '../containers/DoctorAppointmentsContainer';
 import DoctorFormContainer from '../containers/DoctorFormContainer';
+import bookingImage from '../images/bookingImage.png'
 
 const DoctorPage = ({ currentDoctor }) => {
   const [patientList, setPatientList] = useState([]);
@@ -148,6 +149,8 @@ const DoctorPage = ({ currentDoctor }) => {
             patientList={patientList}
             handleAppointmentSubmission={addAppointment}
           />
+
+          <img src = {bookingImage} className='bookingImage'></img>
         </div>
       ) : (
         <h2> Incorrect user- Please login again </h2>
