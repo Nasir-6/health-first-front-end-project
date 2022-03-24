@@ -471,11 +471,13 @@ padding-top: 1rem;
   }
   .our-services-center, .our-services-right, .our-services-left{
     position: relative;
-    min-width: 100%;
+    min-width: 90%;
   }
   
 
   }
+
+ 
   
 
 /* =======
