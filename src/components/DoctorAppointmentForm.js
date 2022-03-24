@@ -55,8 +55,7 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
     <form>
       <div className="form-card">
         <div className="form-card-left">
-        <label>
-          Patient:
+        <label> Patient: </label>
           {/* <select value={this.state.value} onChange={this.handleChange}> */}
           <select onChange={handlePatientIdChange} value={patientId}>
               {patientList.map((patient)=> {
@@ -67,7 +66,7 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
                   )
               })}
           </select>
-        </label>
+        
         </div>
         
         <label> Date</label>
