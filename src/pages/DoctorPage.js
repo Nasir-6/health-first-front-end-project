@@ -15,6 +15,7 @@ const DoctorPage = ({currentDoctor}) => {
     // once mounted get isCorrectFlag from sessionStorage and set it!! (convert and check if boolean)
     useEffect(() => {
         const isCorrectUserFlagInSessionStorage = Boolean(sessionStorage.getItem("isCorrectUser"))
+        // maybe a typeof 
         if(typeof isCorrectUserFlagInSessionStorage == Boolean){
             setIsCorrectUser(isCorrectUserFlagInSessionStorage)
         }
