@@ -10,11 +10,8 @@ import bookingImage from '../images/bookingImage.png'
 const DoctorPage = ({ currentDoctor }) => {
   const [patientList, setPatientList] = useState([]);
   useEffect(() => {
-
     fetch("http://localhost:8080/patients")
       .then((response) => response.json())
-      // .then(data=> console.log(data))
-      // // .then(data=> console.log(JSON.stringify(data)))
       .then((data) => setPatientList(data))
       .catch((error) => console.log(error));
   }, []);
@@ -150,7 +147,7 @@ const DoctorPage = ({ currentDoctor }) => {
             handleAppointmentSubmission={addAppointment}
           />
 
-          <img src = {bookingImage} className='bookingImage'></img>
+          <img src = {bookingImage} className='bookingImage' alt = "Image of Doctors and Patients standing together" ></img>
         </div>
       ) : (
         <h2> Incorrect user- Please login again </h2>
