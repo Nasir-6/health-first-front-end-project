@@ -1,4 +1,7 @@
 import React from 'react'
+import consultation from '../images/consultation.jpg';
+import referral from '../images/referral.jpg';
+import vaccination from '../images/vaccination.jpg';
 
 const OurServices = () => {
   return (
@@ -10,17 +13,28 @@ const OurServices = () => {
     <div className="our-services-container">
 
         <div className="our-services-left">
-            <h3 className="who-are-we">Who are we?</h3>
+        <img src={consultation} className='service-image' />
+            <h3 className="services">Consultations</h3>
+            <p className='about-services'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore natus consectetur modi aspernatur! Nesciunt, quia numquam. Consectetur deleniti vero provident voluptates, aspernatur in reiciendis voluptate corporis optio possimus, ipsam delectus.
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore natus consectetur modi aspernatur! Nesciunt, quia numquam. Consectetur deleniti vero provident voluptates, aspernatur in reiciendis voluptate corporis optio possimus, ipsam delectus.</p>
 
         </div>
 
         <div className="our-services-center">
-            <h3 className="who-are-we">Who are we?</h3>
+        <img src={vaccination} className='service-image' />
+            <h3 className="services">Vaccinations</h3>
+            <p className='about-services'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore natus consectetur modi aspernatur! Nesciunt, quia numquam. Consectetur deleniti vero provident voluptates, aspernatur in reiciendis voluptate corporis optio possimus, ipsam delectus.
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore natus consectetur modi aspernatur! Nesciunt, quia numquam. Consectetur deleniti vero provident voluptates, aspernatur in reiciendis voluptate corporis optio possimus, ipsam delectus.</p>
+
 
         </div>
 
         <div className="our-services-right">
-            <h4 className='slogan-tag'>Putting your health first since 2022</h4>
+        <img src={referral} className='service-image' />
+            <h3 className='services'>Referrals</h3>
+            <p className='about-services'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore natus consectetur modi aspernatur! Nesciunt, quia numquam. Consectetur deleniti vero provident voluptates, aspernatur in reiciendis voluptate corporis optio possimus, ipsam delectus.
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore natus consectetur modi aspernatur! Nesciunt, quia numquam. Consectetur deleniti vero provident voluptates, aspernatur in reiciendis voluptate corporis optio possimus, ipsam delectus.</p>
+
         </div>
 
     </div>

@@ -372,24 +372,14 @@ padding-top: 1rem;
      gap: 1rem;
   }
 
-  .about-us-right, .our-services-right{
+  .about-us-right, .about-us-left{
     display: flex;
-    width: 40%;
+    width: 50%;
     border-radius: 2rem;
     justify-content: start;
     align-items: center;
     flex-direction: column;
      background-color: white;
-  }
-
-  .about-us-left, .our-services-left{
-      display: flex;
-      width: 40%;
-      border-radius: 2rem;
-      justify-content: start;
-      align-items: center;
-      flex-direction: column;
-       background-color: white;
   }
 
   .about-us-header, .our-services-header{
@@ -406,22 +396,25 @@ padding-top: 1rem;
   .laptop-image, .doctor-image, .nurse-image{
       height: 80%;
       width: 80%;
+      padding: 1.5rem;
       border-radius: 2rem;
   }
 
   .who-are-we{
-      padding-bottom: 2rem;
+      padding-bottom: 1rem;
+      padding-top: 2rem;
   }
 
   .about-info{
       display: flex;
       text-align: justify;
       color: var(--dark-color);
+      padding: 2rem;
   }
 
   .color-highlight{
       color: var(--logo-color);
-      padding: 1rem;
+      padding: 0rem 2rem;
   }
 
   .center{
@@ -439,7 +432,7 @@ padding-top: 1rem;
       padding: 2rem;
   }
 
-  .our-services-center{
+  .our-services-center, .our-services-right, .our-services-left{
     display: flex;
     width: 40%;
     border-radius: 2rem;
@@ -448,4 +441,21 @@ padding-top: 1rem;
     flex-direction: column;
      background-color: white;
   }
-  
+  .services{
+    text-align: justify;
+    color: var(--logo-color);
+    padding: .5rem;
+  }
+  .about-services{
+    display: flex;
+    text-align: justify;
+    color: var(--dark-color);
+    padding: 1rem 2rem;
+  }
+
+  .service-image{
+    height: 60%;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 10%;
+  }
