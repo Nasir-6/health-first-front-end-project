@@ -88,6 +88,7 @@ const PatientLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
         name="patientName"
         value={patientName}
         onChange={handlepatientNameChange}
+        className="text-input"
       />
       </div>
 
@@ -99,6 +100,7 @@ const PatientLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
         name="patientNhsId"
         value={patientNhsId}
         onChange={handlepatientNhsIdChange}
+        className="text-input"
       />
       </div>
       
