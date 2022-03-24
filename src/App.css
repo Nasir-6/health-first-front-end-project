@@ -2,7 +2,7 @@
   --logo-color: #4b8ec6;
   --dark-color: #1C2541;
   --background-color: #CCE3F5;
-  --secondary-color: #E8EDEE;
+  --secondary-color: #eff0f0;
 }
 
 *{
@@ -64,6 +64,16 @@ border-radius: 0.8rem;
 border: none;
 justify-items: space-between;
 cursor: pointer;
+}
+
+.delete-btn{
+    background-color:  var(--secondary-color) ;
+    color: var(--logo-color);
+}
+
+.delete-btn:hover{
+     background-color:  var(--secondary-color) ;
+    color: var(--dark-color);
 }
 
 
@@ -188,10 +198,10 @@ button:hover, .button:hover {
     display: flex;
     height: 20vh;
     max-width: 1200px;
-    min-height: 22vh;
+    min-height: 24vh;
   }
 
-  .appointment-card-right, .form-card-right{
+  .appointment-card-right{
     height: 100%;
     width: 50%;
     display: flex;
@@ -199,6 +209,16 @@ button:hover, .button:hover {
     align-items: flex-end;
      gap: 4rem;
      padding: 1rem;
+     justify-content: space-between;
+  }
+
+  .form-card-right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+     padding: 1rem;
+     justify-content: flex-end;
   }
 
   .appointment-card-left, .form-card-left{
@@ -229,10 +249,13 @@ button:hover, .button:hover {
 
 .patient-input:hover, .date-input:hover, .time-input:hover, .id-input:hover{
     background-color: #99c9ee32;
+    width: 80%;
     /* width: 100%; */
 }
 
-
+.bookingImage{
+    padding: 2rem;
+}
 
 /* Login page CSS */
 
