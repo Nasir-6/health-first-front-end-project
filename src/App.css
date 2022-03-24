@@ -318,6 +318,11 @@ button:hover, .button:hover {
     gap: 1rem;
 }
 
+
+.text-input:hover{
+    background-color: #99c9ee32;
+}
+
 .invalidText{
   color: red;
 }
