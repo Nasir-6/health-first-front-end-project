@@ -8,7 +8,7 @@ import AboutUsButton from '../components/AboutUsButton'
 
 const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
 
-  const [isMobile, setIsMobile] = useState(true)
+  const [isMobile, setIsMobile] = useState(false)
 
   
   return (

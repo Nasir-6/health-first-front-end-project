@@ -397,7 +397,7 @@ button:hover, .button:hover {
   display: none;
 }
 
-@media screen and (max-width:660px){
+@media screen and (max-width:770px){
   .firstImage{
     display: flex;
     position:absolute;
@@ -436,6 +436,12 @@ button:hover, .button:hover {
     padding: 32px;
     width: 100%;
   }
+  .login-btn{
+    color: white;
+    text-align: center;
+    padding: 32px;
+    width: 100%;
+  }
   .mobile-menu-icon{
     display:block;
     justify-content: flex-end;
@@ -447,6 +453,7 @@ button:hover, .button:hover {
     top:15px;
 
   }
+  
 
   }
   
