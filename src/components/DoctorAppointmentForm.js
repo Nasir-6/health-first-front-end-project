@@ -49,7 +49,6 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
 
     }
 
-    const [id, setId] = useState(0)
     const [patientOptions, setPatientOptions]= useState([])
 
     const handleIdChange = (e) => {
@@ -67,9 +66,7 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
       });
       // console.log(patientListOptions)
       setPatientOptions(patientListOptions)
-
-
-    },[])
+    },[patientList])
     
     
     
