@@ -466,11 +466,11 @@ padding-top: 1rem;
     display:flex;
     flex-direction: column;
     
-    position: relative;
+    /* position: absolute; */
     
   }
   .our-services-center, .our-services-right, .our-services-left{
-    position: relative;
+    /* position: absolute; */
     min-width: 90%;
   }
   
