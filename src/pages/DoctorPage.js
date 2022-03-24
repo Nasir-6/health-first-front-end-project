@@ -134,7 +134,7 @@ const DoctorPage = ({ currentDoctor }) => {
       (
         <div className="doctor-page-container">
           <h2 data-testid="doctor-greeting" id="doctor-welcome">
-            {"Hi doctor " + doctorId}
+            {"Hi " + doctorName}
           </h2>
           <DoctorAppointmentsContainer
             doctorAppointmentsList={doctorAppointmentsList}
