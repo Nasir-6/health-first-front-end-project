@@ -349,3 +349,17 @@ button:hover, .button:hover {
     }
 
   }
+
+
+  /*About Us Page CSS*/
+
+  .about-us-container{
+      height: 78vh;
+      display: flex;
+      justify-content: center;
+  }
+
+  .about-us-header{
+      padding: 3rem;
+      color: var(--dark-color);
+  }
