@@ -15,10 +15,11 @@ const UpdateButton= ({showIsDisabled, updateAppointment, patientName, id, date, 
 
   return (
     <>
-    <button onClick={showIsUpdating}>
-        Update Button
-    </button>
-    {isUpdating? <FinaliseUpdateButton updateAppointment={updateAppointment} id = {id} patientName={patientName} date={date} time={time} patientId={patientId} showIsDisabled= {showIsDisabled} showIsUpdating ={showIsUpdating}/>: console.log("not updating")}
+    
+    {isUpdating? 
+    <FinaliseUpdateButton updateAppointment={updateAppointment} id = {id} patientName={patientName} date={date} time={time} patientId={patientId} showIsDisabled= {showIsDisabled} showIsUpdating ={showIsUpdating}/>
+    : 
+    <button onClick={showIsUpdating}>Update</button> }
     </>
   )
 }

@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-function DoctorAppointmentForm({patientList}) {
+function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
 
     const [time, setTime] = useState("")
     const [date, setDate] = useState("")
-    const [patientName,setPatientName] = useState("someName")
+    const [patientId,setPatientId] = useState(0)
+    const {doctorId} = useParams()
 
     const handleTimeChange = (e) => {
         setTime(e.target.value)
@@ -14,43 +15,71 @@ function DoctorAppointmentForm({patientList}) {
     const handleDateChange = (e) => {
         setDate(e.target.value)
     }
-    const handlePatientNameChange = async (e) => {
+    const handlePatientIdChange = async (e) => {
         
         console.log("hello")
        console.log(e.target.value)
-        console.log(`patient name before settiing ${patientName}`)
+        console.log(`patient id before settiing ${patientId}`)
         // console.log(e.target.options[e.target.selectedIndex].text)
-        const name = e.target.value
-        // console.log(name)
-        setPatientName(name)
-         console.log(`patient name after settiing ${patientName}`)
+        const id = e.target.value
+        // console.log(Id)
+        setPatientId(id)
+         console.log(`patient id after settiing ${patientId}`)
         // e.preventDefault(); 
     }
 
+    function onSubmission (event){
+        event.preventDefault(); 
+        if(!time||!date||!patientId){
+          console.log("empty form ")
+          return
+        }
+        //TODO: validate input(date and time structure)
+  
+
+        const appointment = {
+          patientNhsId: patientId,
+          doctorId: doctorId,
+          appointmentDate: date,
+          appointmentTime: time
+      }
+      console.log(appointment)
+      handleAppointmentSubmission(appointment)
+
+    }
+
   return (
+  
     <>
-    <div>DoctorAppointmentForm</div>
     {/* <form onSubmit={this.handleSubmit}> */}
     <form>
+      <div className="form-card">
         <label>
-          Patient Name:
+          Patient:
           {/* <select value={this.state.value} onChange={this.handleChange}> */}
-          <select onChange={handlePatientNameChange} value={patientName}>
+          <select onChange={handlePatientIdChange} value={patientId}>
               {patientList.map((patient)=> {
                   return(
-                  <option key = {patient.patientNhsId} value = {patient.patientName}>{patient.patientName}</option>
+                  <option key = {patient.patientNhsId} value = {patient.patientNhsId}>
+                    {patient.patientNhsId}: {patient.patientName}
+                    </option>
                   )
               })}
           </select>
         </label>
-        <label> Date</label>
-        <input value ={date} onChange={handleDateChange}/>
-        <label> Time </label>
-        <input value ={time} onChange={handleTimeChange}/>
-        <input type="submit" value="Submit" />
-      </form>
-    </>
 
+        
+        <label> Date</label>
+        <input type ="date"value ={date} onChange={handleDateChange} data-testid="doctor-input-date"/>
+        <label> Time </label>
+        <input type ="time" value ={time} onChange={handleTimeChange} data-testid="doctor-input-time"/>
+        <input type="submit" value="Submit" onClick={onSubmission} />
+        </div>
+
+      </form>
+      
+      </>
+    
   )
 }
 

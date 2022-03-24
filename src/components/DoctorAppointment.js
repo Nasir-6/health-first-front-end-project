@@ -14,7 +14,7 @@ const DoctorAppointment = ({id , oneDoctorAppointment, handleDeleteAppointment, 
     }
   }
 
-  // const [patientId, setPatientId] = useState(0)
+   const [patientId, setPatientId] = useState(0)
   const [patientName, setPatientName] = useState(oneDoctorAppointment.patientName);
   const [date, setDate] = useState(oneDoctorAppointment.appointmentDate);
   const [time, setTime] = useState(oneDoctorAppointment.appointmentTime);
@@ -29,30 +29,30 @@ const DoctorAppointment = ({id , oneDoctorAppointment, handleDeleteAppointment, 
   .catch(error => console.log(error)), []);
 
 
-  // const filterPatientId = () => {
-  //   for (let i = 0; i<allPatients.length; i++){
-  //     if (allPatients[i].patientName === patientName ){
-  //       console.log(allPatients[i].patientNhsId)
-  //       setPatientId(allPatients[i].patientNhsId)
-  //       console.log("match found")
-  //       return true;
-  //     }
-  //   }
-  // }
+  const filterPatientId = () => {
+    for (let i = 0; i<allPatients.length; i++){
+      if (allPatients[i].patientName === patientName ){
+        console.log(allPatients[i].patientNhsId)
+        setPatientId(allPatients[i].patientNhsId)
+        console.log("match found")
+        return true;
+      }
+    }
+  }
   
   
   
-//   const handlePatientIdChange = (event) => {
-//     setPatientId(event.target.value)
-// }
-//   const handleNameChange = (event) => {
-//     const patientName = filterPatientId()
-//     if(filterPatientId){
-//     setPatientName(event.target.value)
-//     }else if (patientName!==undefined){
-//       setPatientName(patientName)
-//     }
-// }
+  const handlePatientIdChange = (event) => {
+    setPatientId(event.target.value)
+}
+  const handleNameChange = (event) => {
+    const patientName = filterPatientId()
+    if(filterPatientId){
+    setPatientName(event.target.value)
+    }else if (patientName!==undefined){
+      setPatientName(patientName)
+    }
+}
 
 const handleDateChange = (event) => {
     setDate(event.target.value)
@@ -65,21 +65,41 @@ const handleTimeChange = (event) => {
 
 
   return (
-    <article className='doctor-Appointment'>
-      <div className='delete-btn-position'><DeleteButton id = {id} deleteButtonClick={handleDeleteAppointment}/></div>
-        <p className='doctor-appointment-content'>Patient:</p>
-        <input value={patientName} disabled />
-        {/* {!isDisabled? <><p>Patient id</p>
-        <input value={patientId} disabled={isDisabled} onChange={handlePatientIdChange} />
-        <input type="submit" value="find" onClick={filterPatientId} />
-        </>: console.log("disabled ")} */}
-        <p className='doctor-appointment-content'>Date:</p>
-        <input value={date} disabled={isDisabled} onChange={handleDateChange}/>
-        <p className='doctor-appointment-content'>Time:</p>
-        <input value={time} disabled={isDisabled} onChange={handleTimeChange}/>
-        <div className='update-btn-position'> <UpdateButton showIsDisabled={showIsDisabled} updateAppointment={updateAppointment} id = {id}  date={date} time={time} /> </div>
-        
+
+    
+    <article className='doctor-appointment-card'>
+      <div className="appointment-card-left">
+        <div className="patient-info">
+          <p className='patient-title'>Patient:</p>
+          <input value={patientName} disabled={isDisabled} onChange={handleNameChange} className='patient-input' />
+        </div>
+
+        <div className="id-info">
+          {!isDisabled ? <><p className='id-title'>Patient id</p>
+            <input value={patientId} disabled={isDisabled} onChange={handlePatientIdChange} className='id-input' />
+            <input type="submit" value="find" onClick={filterPatientId} />
+          </> : console.log("disabled ")}
+        </div>
+
+
+        <div className="date-info">
+          <p className='date-title'>Date:</p>
+          <input value={date} disabled={isDisabled} onChange={handleDateChange} className="date-input" />
+        </div>
+
+        <div className="time-info">
+          <p className='time-title'>Time:</p>
+          <input value={time} disabled={isDisabled} onChange={handleTimeChange} className="time-input" />
+        </div>
+
+      </div>
+
+      <div className="appointment-card-right">
+        <div className='delete-btn-position'><DeleteButton id={id} deleteButtonClick={handleDeleteAppointment} /></div>
+        <div className='update-btn-position'> <UpdateButton showIsDisabled={showIsDisabled} updateAppointment={updateAppointment} id={id} date={date} time={time} patientId={patientId} /> </div>
+      </div>
     </article>
+   
   )
 }
 

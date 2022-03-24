@@ -15,7 +15,7 @@ const DoctorAppointmentsContainer = ({doctorAppointmentsList, handleDeleteAppoin
 
   return (
     <section className='doctor-appointments-container'>
-      <h2 id="doctor-appointments-title">Here is a list of your appointments:</h2> 
+      <h2 className="doctor-appointments-title">Appointments:</h2> 
      {allAppointments}
     </section >
   )
