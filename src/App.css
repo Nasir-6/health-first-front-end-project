@@ -353,47 +353,46 @@ padding-top: 1rem;
   }
 
 
-  /*About Us Page CSS*/
+  /*About Us and Our Services Page CSS*/
 
-  .about-us-page{
+  .about-us-page, .our-services-page{
     height: 100;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0rem 3rem 2rem;
   }
-  .about-us-container{
+  .about-us-container, .our-services-container{
     display: flex;
     width: 100%;
     min-height: 70vh;
     padding: 2rem 4rem;
     justify-content: space-between;
-     background-color: white;
      border-radius: 2rem;
+     gap: 1rem;
   }
 
-  .about-us-right{
-      width: 45%;
-      height: 100%;
-      border-radius: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
+  .about-us-right, .our-services-right{
+    display: flex;
+    width: 40%;
+    border-radius: 2rem;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+     background-color: white;
   }
 
-  .about-us-left{
+  .about-us-left, .our-services-left{
       display: flex;
-      width: 45%;
-      /* background-color: white; */
+      width: 40%;
       border-radius: 2rem;
       justify-content: start;
       align-items: center;
       flex-direction: column;
+       background-color: white;
   }
 
-  .about-us-header{
+  .about-us-header, .our-services-header{
       padding-top: 1.5rem;
       padding-bottom: .5rem;
       color: var(--dark-color);
@@ -439,3 +438,14 @@ padding-top: 1rem;
   .logo{
       padding: 2rem;
   }
+
+  .our-services-center{
+    display: flex;
+    width: 40%;
+    border-radius: 2rem;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+     background-color: white;
+  }
+  
