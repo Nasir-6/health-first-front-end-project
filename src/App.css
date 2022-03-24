@@ -1,3 +1,4 @@
+
 :root{
   --logo-color: #4b8ec6;
   --dark-color: #1C2541;
@@ -7,7 +8,7 @@
 
 *{
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;   
 }
@@ -129,7 +130,8 @@ button:hover, .button:hover {
 }
 
 .about-us-title{
-  padding-bottom: 0.5rem;
+padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 
@@ -351,35 +353,36 @@ button:hover, .button:hover {
   }
 
 
-  /*About Us Page CSS*/
+  /*About Us and Our Services Page CSS*/
 
-  .about-us-page{
-    height: 78vh;
+  .about-us-page, .our-services-page{
+    height: 100;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0rem 3rem 2rem;
   }
-  .about-us-container{
+  .about-us-container, .our-services-container{
     display: flex;
     width: 100%;
+    min-height: 70vh;
     padding: 2rem 4rem;
     justify-content: space-between;
+     border-radius: 2rem;
+     gap: 1rem;
   }
 
-  .about-us-right{
-      width: 45%;
-      height: 50vh;
-      background-color: white;
-      border-radius: 2rem;
+  .about-us-right, .about-us-left{
+    display: flex;
+    width: 50%;
+    border-radius: 2rem;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+     background-color: white;
   }
 
-  .about-us-left{
-      width: 45%;
-      background-color: white;
-      border-radius: 2rem;
-  }
-
-  .about-us-header{
+  .about-us-header, .our-services-header{
       padding-top: 1.5rem;
       padding-bottom: .5rem;
       color: var(--dark-color);
@@ -424,6 +427,12 @@ button:hover, .button:hover {
     padding: 32px;
     width: 100%;
   }
+  .ourservices-btn{
+    color: white;
+    text-align: center;
+    padding: 32px;
+    width: 100%;
+  }
   /* .logout-btn{
     color: white;
     text-align: center;
@@ -458,3 +467,73 @@ button:hover, .button:hover {
   }
   
 
+/* =======
+    padding-bottom: 1rem;
+  } */
+
+  .laptop-image, .doctor-image, .nurse-image{
+      height: 80%;
+      width: 80%;
+      padding: 1.5rem;
+      border-radius: 2rem;
+  }
+
+  .who-are-we{
+      padding-bottom: 1rem;
+      padding-top: 2rem;
+  }
+
+  .about-info{
+      display: flex;
+      text-align: justify;
+      color: var(--dark-color);
+      padding: 2rem;
+  }
+
+  .color-highlight{
+      color: var(--logo-color);
+      padding: 0rem 2rem;
+  }
+
+  .center{
+    display: flex;
+    text-align: justify;
+  }
+
+  .slogan-tag{
+      color: var(--logo-color);
+      padding: 1rem;
+      font-style: italic;
+  }
+
+  .logo{
+      padding: 2rem;
+  }
+
+  .our-services-center, .our-services-right, .our-services-left{
+    display: flex;
+    width: 40%;
+    border-radius: 2rem;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+     background-color: white;
+  }
+  .services{
+    text-align: justify;
+    color: var(--logo-color);
+    padding: .5rem;
+  }
+  .about-services{
+    display: flex;
+    text-align: justify;
+    color: var(--dark-color);
+    padding: 1rem 2rem;
+  }
+
+  .service-image{
+    height: 60%;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 10%;
+  }

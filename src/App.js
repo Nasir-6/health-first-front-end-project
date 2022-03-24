@@ -10,6 +10,7 @@ import SignUp from './pages/SignUp';
 import Footer from './containers/Footer';
 import { type } from '@testing-library/user-event/dist/type';
 import AboutUsPage from './pages/AboutUs';
+import OurServices from './pages/OurServices';
 
 
 function App() {
@@ -78,6 +79,7 @@ function App() {
           <Route exact path="/patient/:patientId" element={<PatientPage currentPatient={currentUser}/>} />
 
           <Route exact path="/aboutus" element={<AboutUsPage/>} />
+          <Route exact path="/ourServices" element={<OurServices/>} />
 
         </Routes>
 

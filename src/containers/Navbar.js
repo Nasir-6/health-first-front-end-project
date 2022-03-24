@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import SignUpButton from '../components/SignUpButton'
 import LogoutButton from '../components/LogoutButton'
 import AboutUsButton from '../components/AboutUsButton'
+import OurServicesButton from '../components/OurServicesButton'
 
 
 const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
@@ -22,11 +23,20 @@ const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
     </Link>
   
 
+
     <div className={isMobile? 'navRight-mobile': 'navRight'} onClick={()=> setIsMobile(false)}>
       <AboutUsButton/>
-      <button type="button" onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}> Our Services</button>
+      <OurServicesButton/>
       {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/> : <LoginButton />}
       {isLoggedIn ? <></> : <SignUpButton/>}
+
+    {/* <div className='navRight'>
+    <AboutUsButton/>
+    <OurServicesButton/>
+    {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/> : <LoginButton />}
+    {isLoggedIn ? <></> : <SignUpButton/>} */}
+    
+
     </div>
     
     <button className='mobile-menu-icon'
