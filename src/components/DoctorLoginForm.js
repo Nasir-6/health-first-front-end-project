@@ -74,7 +74,7 @@ const DoctorLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
 
   return (
     <>
-      <form onSubmit={handleFormSubmit} className="doctor-login-form">
+      <form onSubmit={handleFormSubmit} className="login-form">
         <div className="name-input-container">
         <label htmlFor="doctorName">Name</label>
         <input

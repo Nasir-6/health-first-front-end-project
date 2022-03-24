@@ -49,7 +49,6 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
 
     }
 
-    const [id, setId] = useState(0)
     const [patientOptions, setPatientOptions]= useState([])
 
     const handleIdChange = (e) => {
@@ -58,6 +57,7 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
     }
 
     useEffect(()=> {
+      console.log(patientList)
       const patientListOptions = patientList.map((patient) => {
         return {
           label: `${patient.patientNhsId}: ${patient.patientName}`,
@@ -66,9 +66,7 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
       });
       // console.log(patientListOptions)
       setPatientOptions(patientListOptions)
-
-
-    },[])
+    },[patientList])
     
     
     

@@ -46,7 +46,7 @@ const Login = ({setIsLoggedIn, updateCurrentUser}) => {
 
       </form>
 
-      {isDoctor ? <DoctorLoginForm setIsLoggedIn={setIsLoggedIn} updateCurrentUser={updateCurrentUser}/> : <PatientLoginForm />}
+      {isDoctor ? <DoctorLoginForm setIsLoggedIn={setIsLoggedIn} updateCurrentUser={updateCurrentUser}/> : <PatientLoginForm setIsLoggedIn={setIsLoggedIn} updateCurrentUser={updateCurrentUser} />}
 
       </div>
     </div>

@@ -122,11 +122,10 @@ const DoctorPage = ({ currentDoctor }) => {
       },
       body: JSON.stringify(newAppointment),
     })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .then((res) =>
-        setDoctorAppointmentsList([...doctorAppointmentsList, newAppointment])
-      );
+      // .then((res) => res.json())
+      .then((res) => setDoctorAppointmentsList([...doctorAppointmentsList, newAppointment]))
+      .catch(error => console.error(error))
+
   };
 
   return (
@@ -135,7 +134,7 @@ const DoctorPage = ({ currentDoctor }) => {
       (
         <div className="doctor-page-container">
           <h2 data-testid="doctor-greeting" id="doctor-welcome">
-            {"Hi doctor " + doctorId}
+            {"Hi " + doctorName}
           </h2>
           <DoctorAppointmentsContainer
             doctorAppointmentsList={doctorAppointmentsList}
