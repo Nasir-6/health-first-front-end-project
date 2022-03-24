@@ -130,7 +130,8 @@ button:hover, .button:hover {
 }
 
 .about-us-title{
-  padding-bottom: 1rem;
+padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 
@@ -403,7 +404,7 @@ button:hover, .button:hover {
     padding-bottom: 1rem;
   }
 
-  .laptop-image, .doctor-image{
+  .laptop-image, .doctor-image, .nurse-image{
       height: 80%;
       width: 80%;
       border-radius: 2rem;
@@ -433,4 +434,8 @@ button:hover, .button:hover {
       color: var(--logo-color);
       padding: 1rem;
       font-style: italic;
+  }
+
+  .logo{
+      padding: 2rem;
   }
