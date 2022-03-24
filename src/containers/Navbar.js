@@ -20,9 +20,10 @@ const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
   
 
     <div className='navRight'>
+    <button type="button" onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}> About Health First</button>
+    <button type="button" onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}> Our Services</button>
     {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/> : <LoginButton />}
     {isLoggedIn ? <></> : <SignUpButton/>}
-    
     
     </div>
     </header>
