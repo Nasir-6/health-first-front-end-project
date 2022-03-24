@@ -12,9 +12,9 @@ const DoctorPage = ({ currentDoctor }) => {
 
     fetch("http://localhost:8080/patients")
       .then((response) => response.json())
-      .then(data=> console.log(data))
-      // .then(data=> console.log(JSON.stringify(data)))
-      // // .then((data) => setPatientList(data))
+      // .then(data=> console.log(data))
+      // // .then(data=> console.log(JSON.stringify(data)))
+      .then((data) => setPatientList(data))
       .catch((error) => console.log(error));
   }, []);
 

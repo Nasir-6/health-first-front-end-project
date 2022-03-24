@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Select, { components } from "react-select";
 
@@ -49,18 +49,50 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
 
     }
 
+    const [id, setId] = useState(0)
+    const [patientOptions, setPatientOptions]= useState([])
+
+    const handleIdChange = (e) => {
+      console.log(e.value)
+      setPatientId(e.value)
+    }
+
+    useEffect(()=> {
+      const patientListOptions = patientList.map((patient) => {
+        return {
+          label: `${patient.patientNhsId}: ${patient.patientName}`,
+          value: patient.patientNhsId
+        };
+      });
+      // console.log(patientListOptions)
+      setPatientOptions(patientListOptions)
+
+
+    },[])
+    
+    
+    
+    
+
   return (
   
     <>
       {/* <form onSubmit={this.handleSubmit}> */}
       <form>
-        <Select/>
+        
+      
+
         <div className="form-card">
           <div className="form-card-left">
             <div className="patient-info">
               <label className='patient-title'> Patient: </label>
+              <Select 
+                className='patient-input'
+                onChange={handleIdChange} 
+                options={patientOptions} 
+              />
               {/* <select value={this.state.value} onChange={this.handleChange}> */}
-              <select className='patient-input' onChange={handlePatientIdChange} value={patientId}>
+              {/* <select className='patient-input' onChange={handlePatientIdChange} value={patientId}>
                 {patientList.map((patient) => {
                   return (
                     <option key={patient.patientNhsId} value={patient.patientNhsId}>
@@ -68,7 +100,7 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
                     </option>
                   )
                 })}
-              </select>
+              </select> */}
             </div>
 
          
