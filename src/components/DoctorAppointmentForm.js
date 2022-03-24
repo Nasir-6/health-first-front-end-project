@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Select, { components } from "react-select";
 
 function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
 
@@ -53,6 +54,7 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
     <>
       {/* <form onSubmit={this.handleSubmit}> */}
       <form>
+        <Select/>
         <div className="form-card">
           <div className="form-card-left">
             <div className="patient-info">
