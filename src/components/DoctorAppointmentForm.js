@@ -58,6 +58,7 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
     }
 
     useEffect(()=> {
+      console.log(patientList)
       const patientListOptions = patientList.map((patient) => {
         return {
           label: `${patient.patientNhsId}: ${patient.patientName}`,
