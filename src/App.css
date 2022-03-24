@@ -462,6 +462,17 @@ padding-top: 1rem;
     top:15px;
 
   }
+  .our-services-container{
+    display:flex;
+    flex-direction: column;
+    
+    position: relative;
+    
+  }
+  .our-services-center, .our-services-right, .our-services-left{
+    position: relative;
+    min-width: 100%;
+  }
   
 
   }
