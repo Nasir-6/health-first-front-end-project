@@ -3,6 +3,7 @@ import LoginButton from '../components/LoginButton'
 import { Link } from 'react-router-dom'
 import SignUpButton from '../components/SignUpButton'
 import LogoutButton from '../components/LogoutButton'
+import AboutUsButton from '../components/AboutUsButton'
 
 
 const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
@@ -20,14 +21,14 @@ const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
   
 
     <div className='navRight'>
-    <button type="button" onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}> About Health First</button>
+    <AboutUsButton/>
     <button type="button" onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}> Our Services</button>
     {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/> : <LoginButton />}
     {isLoggedIn ? <></> : <SignUpButton/>}
     
     </div>
     </header>
-  )
+  )          
 }
 
 export default Navbar;
