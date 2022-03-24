@@ -23,12 +23,12 @@ const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
   
 
     <div className={isMobile? 'navRight-mobile': 'navRight'} onClick={()=> setIsMobile(false)}>
-    <AboutUsButton/>
-    <button type="button" onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}> Our Services</button>
-    {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/> : <LoginButton />}
-    {isLoggedIn ? <></> : <SignUpButton/>}
-    
+      <AboutUsButton/>
+      <button type="button" onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}> Our Services</button>
+      {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/> : <LoginButton />}
+      {isLoggedIn ? <></> : <SignUpButton/>}
     </div>
+    
     <button className='mobile-menu-icon'
     onClick={()=>setIsMobile(!isMobile)}>
       {isMobile? <i className='fas fa-times'></i>: <i className='fas fa-bars'></i>}
