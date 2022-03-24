@@ -10,9 +10,9 @@ describe("Doctor page tests", () => {
     )
     const inputDateField = screen.getByTestId(/doctor-input-date/i);
     // When
-    fireEvent.change(inputDateField, { target: { value: "2022-10-9"}})
+    fireEvent.change(inputDateField, { target: { value: "22/10/2022"}})
     // Then
-    expect(inputDateField.value).toBe("2022-10-9");
+    expect(inputDateField.value).toBe("22/10/2022");
   })
   test('can input text into time field in doctor form', () => {
     // Given
