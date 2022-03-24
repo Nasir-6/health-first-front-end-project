@@ -54,6 +54,7 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
     {/* <form onSubmit={this.handleSubmit}> */}
     <form>
       <div className="form-card">
+        <div className="form-card-left">
         <label>
           Patient:
           {/* <select value={this.state.value} onChange={this.handleChange}> */}
@@ -67,13 +68,16 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
               })}
           </select>
         </label>
-
+        </div>
         
         <label> Date</label>
-        <input type ="date"value ={date} onChange={handleDateChange} data-testid="doctor-input-date"/>
+        <input type ="date"value ={date} onChange={handleDateChange}/>
         <label> Time </label>
-        <input type ="time" value ={time} onChange={handleTimeChange} data-testid="doctor-input-time"/>
+        <input type ="time"value ={time} onChange={handleTimeChange}/>
+
+        <div className="form-card-right">
         <input type="submit" value="Submit" onClick={onSubmission} />
+        </div>
         </div>
 
       </form>
