@@ -5,7 +5,7 @@ const Home = () => {
     <>
       <div className="slogan-container">
         <div className="slogan-overlay">
-          <h2 className="slogan">We put your health first</h2>
+          <h1 className="slogan">We put your health first</h1>
         </div>
       </div>
       <div className="about-us">
