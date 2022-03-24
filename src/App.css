@@ -311,7 +311,7 @@ button:hover, .button:hover {
    padding-right: 1.6rem;
 }
 
-.doctor-login-form{
+.login-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
