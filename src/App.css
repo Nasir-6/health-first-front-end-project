@@ -17,6 +17,8 @@
   width: 100vw;
   min-height: 100vh;
   background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
 }
 
 /* General Navbar css */
@@ -120,18 +122,18 @@ button:hover, .button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 28vh;
+  /* height: 28vh; */
 }
 
 .about-us-text,
 .about-us-title{
   color: var(--dark-color);
   max-width: 600px;
+  padding-bottom: 2rem;
 }
 
 .about-us-title{
 padding-top: 1rem;
-  padding-bottom: 2rem;
 }
 
 
