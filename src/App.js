@@ -40,6 +40,7 @@ function App() {
 
 
   const[currentUser, setCurrentUser] = useState(null)
+  
   useEffect(() => {
     const currentUserInSessionStorage = JSON.parse(sessionStorage.getItem('currentUser'));
     setCurrentUser(currentUserInSessionStorage);
