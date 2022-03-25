@@ -345,30 +345,6 @@ padding-top: 1rem;
 
 
 
-@media only screen and (max-width: 850px) {
-
-    .login-card-right{
-        width: 100%;
-    }
-    
-    .login-card-left{
-        width: 0%;
-    }
-
-    .our-services-container{
-      display:flex;
-      flex-direction: column;
-      align-items: center;
-      
-      /* position: absolute; */
-    } 
-
-    .our-services-center, .our-services-right, .our-services-left{
-      /* position: absolute; */
-      min-width: 90%;
-    }
-
-  }
 
 
   /*About Us and Our Services Page CSS*/
@@ -418,79 +394,7 @@ padding-top: 1rem;
   display: none;
 }
 
-@media screen and (max-width:770px){
-  a{
-    color: white;
-    text-align: center;
-    padding: 32px;
-    width: 100%;
-  }
-  
-  .navRight{
-    display: none;
-  }
-  .navRight-mobile{
-    position:absolute;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    color: white;
-    background-color:#4b8ec6;
-    left:0;
-    top:75px;
-    width:100%;
 
-  }
-  .signup-btn{
-    color: white;
-    text-align: center;
-    padding: 32px;
-    width: 100%;
-  }
-  .ourservices-btn{
-    color: white;
-    text-align: center;
-    padding: 32px;
-    width: 100%;
-  }
-  /* .logout-btn{
-    color: white;
-    text-align: center;
-    padding: 32px;
-    width: 100%;
-  } */
-  .aboutus-btn{
-    color: white;
-    text-align: center;
-    padding: 32px;
-    width: 100%;
-  }
-  .login-btn{
-    color: white;
-    text-align: center;
-    padding: 32px;
-    width: 100%;
-  }
-  .mobile-menu-icon{
-    display:block;
-    justify-content: flex-end;
-    font-size: 30px;
-    color: white;
-    background-color:#4b8ec6;
-    border: none;
-    outline: none;
-    top:15px;
-
-  }
-
-
-  
-
-  
-  
-  
-
-  }
 
  
   
@@ -575,3 +479,127 @@ padding-top: 1rem;
     align-items: center;
     gap: 0.5rem;
   }
+
+
+
+  @media only screen and (max-width: 1150px) {
+
+    .about-us-right{
+      display: none;
+    }
+
+    .about-us-container{
+      justify-content: center;
+    }
+
+    .about-us-left{
+      width: 65%;
+    }
+    
+  }
+
+
+
+  @media only screen and (max-width: 850px) {
+
+    .login-card-right{
+        width: 100%;
+    }
+    
+    .login-card-left{
+        width: 0%;
+    }
+
+    .our-services-container{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      
+      /* position: absolute; */
+    } 
+
+    .our-services-center, .our-services-right, .our-services-left{
+      /* position: absolute; */
+      min-width: 90%;
+    }
+
+  }
+
+
+
+  @media screen and (max-width:770px){
+    a{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    }
+    
+    .navRight{
+      display: none;
+    }
+    .navRight-mobile{
+      position:absolute;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      color: white;
+      background-color:#4b8ec6;
+      left:0;
+      top:75px;
+      width:100%;
+  
+    }
+    .signup-btn{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    }
+    .ourservices-btn{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    }
+    /* .logout-btn{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    } */
+    .aboutus-btn{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    }
+    .login-btn{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    }
+    .mobile-menu-icon{
+      display:block;
+      justify-content: flex-end;
+      font-size: 30px;
+      color: white;
+      background-color:#4b8ec6;
+      border: none;
+      outline: none;
+      top:15px;
+  
+    }
+
+
+    
+  
+  
+    
+  
+    
+    
+    
+  
+    }
