@@ -2,6 +2,7 @@ import React from 'react'
 import PatientLoginForm from '../components/PatientLoginForm';
 import DoctorLoginForm from '../components/DoctorLoginForm';
 import {useState} from 'react'
+import image from '../images/loginImage.jpg'
 
 const Login = ({setIsLoggedIn, updateCurrentUser}) => {
 
@@ -22,7 +23,7 @@ const Login = ({setIsLoggedIn, updateCurrentUser}) => {
   return (
     <div className='login-page'>
     <div className="login-card">
-      <div className='login-card-left'>
+    <div className='login-card-left' style={{backgroundImage: `url(${image})` }}>
       
       </div>
       

@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import PatientAppointmentsContainer from '../containers/PatientAppointmentsContainer';
+import IncorrectUser from '../components/IncorrectUser';
 
 const PatientPage= ({currentPatient}) => {
   const [patientName, setPatientName] = useState("")
@@ -91,7 +92,7 @@ const PatientPage= ({currentPatient}) => {
           />
         </div>
       ) : (
-        <h2> Incorrect user- Please login again </h2>
+        <IncorrectUser currentUser={currentPatient}/>
       )}
     </>
   );
