@@ -11,8 +11,8 @@ const LogoutButton = ({setLoginStatus, updateCurrentUser}) => {
   }
   
   return (
-    <Link to= "/">
-    <button onClick={handleLogoutButtonClick}>Logout</button>
+    <Link to= "/" >
+    <button className='logout-btn'onClick={handleLogoutButtonClick}>Logout</button>
     </Link>
   )
 }

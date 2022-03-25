@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const AboutUsButton = () => {
 
   return (
-    <Link to= "/aboutus">
+    <Link to= "/aboutus" className='aboutus-btn'>
     <button>About Us</button>
     
     </Link>
