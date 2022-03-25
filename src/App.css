@@ -1,3 +1,4 @@
+
 :root{
   --logo-color: #4b8ec6;
   --dark-color: #1C2541;
@@ -7,7 +8,7 @@
 
 *{
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;   
 }
@@ -16,6 +17,8 @@
   width: 100vw;
   min-height: 100vh;
   background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
 }
 
 /* General Navbar css */
@@ -26,7 +29,7 @@
     padding: 1rem 1rem;
     justify-content: space-between;  
     background-color: var(--logo-color); 
-    height: 12vh;
+    height: 85px;
 }
 
 .firstImage{
@@ -119,17 +122,18 @@ button:hover, .button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 28vh;
+  /* height: 28vh; */
 }
 
 .about-us-text,
 .about-us-title{
   color: var(--dark-color);
   max-width: 600px;
+  padding-bottom: 2rem;
 }
 
 .about-us-title{
-  padding-bottom: 0.5rem;
+padding-top: 1rem;
 }
 
 
@@ -197,11 +201,18 @@ button:hover, .button:hover {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     display: flex;
     height: 20vh;
-    max-width: 1200px;
-    min-height: 24vh;
+    max-width: 500px;
+    min-height: 200px;
+    width: 80%;
+    /* min-width: 500px; */
   }
 
-  .appointment-card-right{
+  .form-card{
+    min-width: 500px;
+    width: 100%;
+  }
+
+  .appointment-card-right, .form-card-right{
     height: 100%;
     width: 50%;
     display: flex;
@@ -233,24 +244,32 @@ button:hover, .button:hover {
 
   .patient-info, .date-info, .time-info, .id-info{
       display: flex;
-      gap: 10rem;
-      justify-content: center;
+      gap: 1rem;
+      align-items: center;
+      justify-content: flex-end;
   }
 
-.patient-input, .date-input, .time-input, .id-input{
+.patient-input, .date-input, .time-input, .id-input, .text-input{
     background-color: white;
     transition: 0.3s all;
     height: 2rem;
-    width: 50%;
+    width: 55%;
     border-radius: .5rem;
     border: none;
+    padding: 0.75rem;
     /* transition: width 0.4s ease-in-out; */
+    box-shadow:inset 0 0 2.5px 2.5px rgba(136, 136, 136, 0.24);
 }
 
 .patient-input:hover, .date-input:hover, .time-input:hover, .id-input:hover{
     background-color: #99c9ee32;
-    width: 80%;
+    width: 60%;
     /* width: 100%; */
+}
+
+
+.patient-select{
+  width: 55%;
 }
 
 .bookingImage{
@@ -263,7 +282,7 @@ button:hover, .button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 78vh;
+    height: 550px;
 }
 
 .login-card{
@@ -286,7 +305,7 @@ button:hover, .button:hover {
 }
 
 .login-card-left{
-    background-image: url('./images/loginImage.jpg');
+    /* background-image: url('./images/loginImage.jpg'); */
     background-size: cover;
     height: 100%;
     width: 50%;
@@ -304,7 +323,8 @@ button:hover, .button:hover {
 .name-input-container, .id-input-container{
     display: flex;
     justify-content: flex-end;
-    gap: .5rem;
+    gap: 1rem;
+    align-items: center;
 }
 
 .id-label{
@@ -318,6 +338,10 @@ button:hover, .button:hover {
     gap: 1rem;
 }
 
+#doctorChoice, #patientChoice{
+  margin-right: 0.25rem;
+}
+
 
 .text-input:hover{
     background-color: #99c9ee32;
@@ -328,7 +352,173 @@ button:hover, .button:hover {
 }
 
 
-@media only screen and (max-width: 850px) {
+.login-page-btn{
+  max-width: 100px;
+  align-self: center;
+}
+
+
+
+
+
+
+
+
+
+  /*About Us and Our Services Page CSS*/
+
+  .about-us-page, .our-services-page{
+    height: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0rem 3rem 2rem;
+  }
+  .about-us-container, .our-services-container{
+    display: flex;
+    width: 100%;
+    min-height: 70vh;
+    padding: 2rem 4rem;
+    justify-content: space-between;
+     border-radius: 2rem;
+     gap: 1rem;
+  }
+
+  .about-us-right, .about-us-left{
+    display: flex;
+    width: 50%;
+    border-radius: 2rem;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+     background-color: white;
+  }
+
+  .about-us-header, .our-services-header{
+      padding-top: 1.5rem;
+      padding-bottom: .5rem;
+      color: var(--dark-color);
+  }
+
+  .subheader{
+    color: var(--logo-color);
+  }
+
+
+
+    /*About Us Page CSS*/
+
+.mobile-menu-icon{
+  display: none;
+}
+
+
+
+ 
+  
+
+/* =======
+    padding-bottom: 1rem;
+  } */
+
+  .laptop-image, .doctor-image, .nurse-image{
+      height: 80%;
+      width: 80%;
+      padding: 1.5rem;
+      border-radius: 2rem;
+  }
+
+  .who-are-we{
+      padding-bottom: 1rem;
+      padding-top: 2rem;
+  }
+
+  .about-info{
+      display: flex;
+      text-align: justify;
+      color: var(--dark-color);
+      padding: 2rem;
+  }
+
+  .color-highlight{
+      color: var(--logo-color);
+      padding: 0rem 2rem;
+  }
+
+  .center{
+    display: flex;
+    text-align: justify;
+  }
+
+  .slogan-tag{
+      color: var(--logo-color);
+      padding: 1rem;
+      font-style: italic;
+  }
+
+  .logo{
+      padding: 2rem;
+  }
+
+  .our-services-center, .our-services-right, .our-services-left{
+    display: flex;
+    width: 40%;
+    border-radius: 2rem;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+     background-color: white;
+  }
+  .services{
+    text-align: justify;
+    color: var(--logo-color);
+    padding: .5rem;
+  }
+  .about-services{
+    display: flex;
+    text-align: justify;
+    color: var(--dark-color);
+    padding: 1rem 2rem;
+  }
+
+  .service-image{
+    height: 60%;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 10%;
+  }
+
+
+  .incorrect-container{
+    padding: 0.5rem;
+    min-height: 78vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+
+
+  @media only screen and (max-width: 1150px) {
+
+    .about-us-right{
+      display: none;
+    }
+
+    .about-us-container{
+      justify-content: center;
+    }
+
+    .about-us-left{
+      width: 65%;
+    }
+    
+  }
+
+
+
+  @media only screen and (max-width: 850px) {
 
     .login-card-right{
         width: 100%;
@@ -338,4 +528,96 @@ button:hover, .button:hover {
         width: 0%;
     }
 
+    .our-services-container{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      
+      /* position: absolute; */
+    } 
+
+    .our-services-center, .our-services-right, .our-services-left{
+      /* position: absolute; */
+      min-width: 90%;
+    }
+
   }
+
+
+
+  @media screen and (max-width:770px){
+    a{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    }
+    
+    .navRight{
+      display: none;
+    }
+    .navRight-mobile{
+      position:absolute;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      color: white;
+      background-color:#4b8ec6;
+      left:0;
+      top:75px;
+      width:100%;
+  
+    }
+    .signup-btn{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    }
+    .ourservices-btn{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    }
+    /* .logout-btn{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    } */
+    .aboutus-btn{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    }
+    .login-btn{
+      color: white;
+      text-align: center;
+      padding: 32px;
+      width: 100%;
+    }
+    .mobile-menu-icon{
+      display:block;
+      justify-content: flex-end;
+      font-size: 30px;
+      color: white;
+      background-color:#4b8ec6;
+      border: none;
+      outline: none;
+      top:15px;
+  
+    }
+
+
+    
+  
+  
+    
+  
+    
+    
+    
+  
+    }

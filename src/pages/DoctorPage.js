@@ -6,6 +6,7 @@ import DeleteButton from '../components/DeleteButton';
 import DoctorAppointmentsContainer from '../containers/DoctorAppointmentsContainer';
 import DoctorFormContainer from '../containers/DoctorFormContainer';
 import bookingImage from '../images/bookingImage.png'
+import IncorrectUser from '../components/IncorrectUser';
 
 const DoctorPage = ({ currentDoctor }) => {
   const [patientList, setPatientList] = useState([]);
@@ -149,7 +150,7 @@ const DoctorPage = ({ currentDoctor }) => {
           <img src = {bookingImage} className='bookingImage' alt = "Image of Doctors and Patients standing together" ></img>
         </div>
       ) : (
-        <h2> Incorrect user- Please login again </h2>
+        <IncorrectUser currentUser={currentDoctor}/>
       )}
     </>
   );

@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LoginButton from '../components/LoginButton'
 import { Link } from 'react-router-dom'
 import SignUpButton from '../components/SignUpButton'
 import LogoutButton from '../components/LogoutButton'
+import AboutUsButton from '../components/AboutUsButton'
+import OurServicesButton from '../components/OurServicesButton'
 
 
 const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
+
+  const [isMobile, setIsMobile] = useState(false)
 
   
   return (
@@ -19,15 +23,28 @@ const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
     </Link>
   
 
-    <div className='navRight'>
-    <button type="button" onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}> About Health First</button>
-    <button type="button" onClick={(e) => {e.preventDefault(); window.location.href='http://google.com';}}> Our Services</button>
+
+    <div className={isMobile? 'navRight-mobile': 'navRight'} onClick={()=> setIsMobile(false)}>
+      <AboutUsButton/>
+      <OurServicesButton/>
+      {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/> : <LoginButton />}
+      {isLoggedIn ? <></> : <SignUpButton/>}
+
+    {/* <div className='navRight'>
+    <AboutUsButton/>
+    <OurServicesButton/>
     {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/> : <LoginButton />}
-    {isLoggedIn ? <></> : <SignUpButton/>}
+    {isLoggedIn ? <></> : <SignUpButton/>} */}
     
+
     </div>
+    
+    <button className='mobile-menu-icon'
+    onClick={()=>setIsMobile(!isMobile)}>
+      {isMobile? <i className='fas fa-times'></i>: <i className='fas fa-bars'></i>}
+    </button>
     </header>
-  )
+  )          
 }
 
 export default Navbar;
