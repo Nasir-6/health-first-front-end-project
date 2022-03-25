@@ -342,6 +342,9 @@ padding-top: 1rem;
 
 
 
+
+
+
 @media only screen and (max-width: 850px) {
 
     .login-card-right{
@@ -350,6 +353,19 @@ padding-top: 1rem;
     
     .login-card-left{
         width: 0%;
+    }
+
+    .our-services-container{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      
+      /* position: absolute; */
+    } 
+
+    .our-services-center, .our-services-right, .our-services-left{
+      /* position: absolute; */
+      min-width: 90%;
     }
 
   }
@@ -466,17 +482,12 @@ padding-top: 1rem;
     top:15px;
 
   }
-  .our-services-container{
-    display:flex;
-    flex-direction: column;
-    
-    /* position: absolute; */
-    
-  }
-  .our-services-center, .our-services-right, .our-services-left{
-    /* position: absolute; */
-    min-width: 90%;
-  }
+
+
+  
+
+  
+  
   
 
   }
