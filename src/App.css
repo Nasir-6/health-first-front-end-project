@@ -338,6 +338,10 @@ padding-top: 1rem;
     gap: 1rem;
 }
 
+#doctorChoice, #patientChoice{
+  margin-right: 0.25rem;
+}
+
 
 .text-input:hover{
     background-color: #99c9ee32;
@@ -345,6 +349,12 @@ padding-top: 1rem;
 
 .invalidText{
   color: red;
+}
+
+
+.login-page-btn{
+  max-width: 100px;
+  align-self: center;
 }
 
 

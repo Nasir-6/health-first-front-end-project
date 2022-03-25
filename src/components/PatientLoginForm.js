@@ -107,7 +107,7 @@ const PatientLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
 
       <p className="invalidText">{invalidTextWarning}</p>
 
-      <input type="submit" value="Login" className="button" />
+      <input type="submit" value="Login" className="button login-page-btn" />
     </form>
   </>
   )
