@@ -4,7 +4,7 @@ import logoInverse from '../images/logoInverse.png'
 const Footer = () => {
   return (
     <body className='footer'>
-    <p>© HealthFirst copyright</p>
+    <p>Copyright © 2021 HealthFirst, All rights reserved.</p>
     <img src = {logoInverse} className='logoInverse'></img>
     </body>
   )

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
-const DoctorLoginForm = () => {
+const DoctorLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
 
         // Set all states to empty at start
         const [doctorName, setDoctorName] = useState("");
@@ -44,13 +44,22 @@ const DoctorLoginForm = () => {
             }
     
             // Check if Doctor is DB!!
-            const doctorInDb = await getDoctorById(doctorId);
+            const doctorInDb = await getDoctorById(doctorId);            
 
-            if(doctorInDb === null || doctorInDb === undefined || doctorInDb.status == 404){
-                setInvalidTextWarning("Invalid Name or Id");
+            if(doctorInDb === null || doctorInDb === undefined || doctorInDb.status === 404){
+                setInvalidTextWarning("Invalid name or ID");
                 return
-            } else if(doctorInDb.doctorName.split(" ")[1].toLowerCase() === doctorName.toLowerCase()){
+            } else if(doctorInDb.doctorName.split(" ")[1].toLowerCase() != doctorName.toLowerCase()){
+                setInvalidTextWarning("Incorrect name or ID");
+                return
+            }else if(doctorInDb.doctorName.split(" ")[1].toLowerCase() === doctorName.toLowerCase()){
                 setInvalidTextWarning(" ");
+                setIsLoggedIn(true)
+                // Also set the currentUser
+                updateCurrentUser({
+                    name: doctorName,
+                    id: doctorId
+                })
                 navigate(`/doctor/${doctorInDb.doctorId}`);
                 return
             } else {
@@ -65,7 +74,7 @@ const DoctorLoginForm = () => {
 
   return (
     <>
-      <form onSubmit={handleFormSubmit} className="doctor-login-form">
+      <form onSubmit={handleFormSubmit} className="login-form">
         <div className="name-input-container">
         <label htmlFor="doctorName">Name</label>
         <input
@@ -74,6 +83,7 @@ const DoctorLoginForm = () => {
           name="doctorName"
           value={doctorName}
           onChange={handleDoctorNameChange}
+          className="text-input"
         />
         </div>
 
@@ -85,13 +95,14 @@ const DoctorLoginForm = () => {
           name="doctorId"
           value={doctorId}
           onChange={handleDoctorIdChange}
+          className="text-input"
         />
         </div>
         
 
         <p className="invalidText">{invalidTextWarning}</p>
 
-        <input type="submit" value="Login" className="button" />
+        <input type="submit" value="Login" className="button login-page-btn" />
       </form>
     </>
   );

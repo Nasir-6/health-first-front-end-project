@@ -4,9 +4,10 @@ import DoctorAppointmentForm from '../components/DoctorAppointmentForm'
 function DoctorFormContainer({patientList, handleAppointmentSubmission}) {
   return (
     <>
-    <h1> This is the form container </h1>
+    <div className='form-container'> 
+    <h2 className='form-title'>Book a new appointment:</h2>
     <DoctorAppointmentForm patientList={patientList} handleAppointmentSubmission ={handleAppointmentSubmission}/>
-    
+     </div>
     </>
   )
 }

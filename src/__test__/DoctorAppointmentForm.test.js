@@ -1,7 +1,7 @@
 import { render, screen, fireEvent} from '@testing-library/react';
 import DoctorAppointmentForm from '../components/DoctorAppointmentForm';
 
-describe("Doctor page tests", () => {
+describe("Doctor appointment form tests", () => {
   test('can input text into date field in doctor form', () => {
     // Given
     window.history.pushState({}, "", "doctor/1");

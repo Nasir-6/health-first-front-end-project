@@ -2,8 +2,9 @@ import React from 'react'
 import PatientLoginForm from '../components/PatientLoginForm';
 import DoctorLoginForm from '../components/DoctorLoginForm';
 import {useState} from 'react'
+import image from '../images/loginImage.jpg'
 
-const Login = () => {
+const Login = ({setIsLoggedIn, updateCurrentUser}) => {
 
     //State for whether login in as Doctor or Patient
     const [isDoctor, setIsDoctor] = useState(true);
@@ -22,7 +23,7 @@ const Login = () => {
   return (
     <div className='login-page'>
     <div className="login-card">
-      <div className='login-card-left'>
+    <div className='login-card-left' style={{backgroundImage: `url(${image})` }}>
       
       </div>
       
@@ -46,7 +47,7 @@ const Login = () => {
 
       </form>
 
-      {isDoctor ? <DoctorLoginForm /> : <PatientLoginForm />}
+      {isDoctor ? <DoctorLoginForm setIsLoggedIn={setIsLoggedIn} updateCurrentUser={updateCurrentUser}/> : <PatientLoginForm setIsLoggedIn={setIsLoggedIn} updateCurrentUser={updateCurrentUser} />}
 
       </div>
     </div>

@@ -3,17 +3,17 @@ import DoctorPage from '../pages/DoctorPage';
 import { BrowserRouter as Router, MemoryRouter, Route, Routes } from 'react-router-dom'
 
 describe("Doctor page tests", () => {
-  test('displays correct welcome message for doctor', () => {
+  test('displays correct welcome message for doctor', async () => {
     // Sets path to "doctor/1"
     window.history.pushState({}, "", "doctor/1");
     render(
       <Router>
         <Routes>
-        <Route exact path="/doctor/:doctorId" element={<DoctorPage/>} />
+        <Route exact path="/doctor/:doctorId" element={<DoctorPage currentDoctor={{name: "Darwin", id: 1}}/>} />
         </Routes>
       </Router>
     )
-    const linkElement = screen.getByText(/Hi Doctor 1/i);
-    expect(linkElement).toBeVisible();
-  })
+    const welcomeMessage = await screen.findByText("Hi Dr Darwin");
+    expect(welcomeMessage).toBeVisible();
+  });
 })
