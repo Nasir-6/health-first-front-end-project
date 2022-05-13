@@ -11,6 +11,7 @@ import Footer from './containers/Footer';
 import { type } from '@testing-library/user-event/dist/type';
 import AboutUsPage from './pages/AboutUs';
 import OurServices from './pages/OurServices';
+// import { SERVER_URL } from './Constants';
 
 
 function App() {
