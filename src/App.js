@@ -11,9 +11,16 @@ import Footer from './containers/Footer';
 import { type } from '@testing-library/user-event/dist/type';
 import AboutUsPage from './pages/AboutUs';
 import OurServices from './pages/OurServices';
+import { SERVER_URL } from './Constants';
 
 
 function App() {
+
+  // Setting up SERVERURL to change to aws server when production build is run!
+    // console.log(process.env.NODE_ENV)
+    // console.log(SERVER_URL)
+    if(process.env.NODE_ENV != 'production') console.log("Please ensure you are running the local intelliJ Server on port 8080, as you are not running the production build!")
+
 
 
     //Make isLogged in state here - so can share with navbar and update using login

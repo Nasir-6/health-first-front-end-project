@@ -7,8 +7,8 @@ const PatientPage= ({currentPatient}) => {
   const [patientName, setPatientName] = useState("")
   const { patientId } = useParams();
   const [patientAppointmentsList, setPatientAppointmentsList] = useState([]);
-  const getPatientAppointmentsUrl =
-    "http://localhost:8080/appointments/patientId/" + patientId;
+  const getPatientAppointmentsUrl = 
+  "http://localhost:8080/appointments/patientId/" + patientId;
   
   
 

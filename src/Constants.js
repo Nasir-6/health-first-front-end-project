@@ -1,0 +1,1 @@
+export const SERVER_URL = process.env.NODE_ENV == 'production'? "http://healthfirst-env-1.eba-tccmngic.eu-west-2.elasticbeanstalk.com" : "http://localhost:8080"
