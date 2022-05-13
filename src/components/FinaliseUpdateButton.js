@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { SERVER_URL } from '../Constants';
 
 
 const FinaliseUpdateButton= ({updateAppointment, id, date, time, patientId, showIsDisabled, showIsUpdating}) => {
@@ -26,7 +27,7 @@ const FinaliseUpdateButton= ({updateAppointment, id, date, time, patientId, show
 
   }
 
-  const url = "http://localhost:8080/appointments/"+ id;
+  const url = SERVER_URL + "/appointments/"+ id;
   useEffect(()=>{
     fetchingNhsId(url)
     fetchingDoctorId(url)
@@ -40,7 +41,7 @@ const FinaliseUpdateButton= ({updateAppointment, id, date, time, patientId, show
       event.preventDefault(); 
      
       const appointmentId= event.currentTarget.id
-      const url = "http://localhost:8080/appointments/"+ appointmentId;
+      const url = SERVER_URL + "/appointments/"+ appointmentId;
 
      
       console.log(patientNhsId)

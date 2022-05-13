@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import { SERVER_URL } from '../Constants';
 
 const PatientLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
 
@@ -23,7 +24,7 @@ const PatientLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
   
           // // Fetch request to grab patientByID
           const getpatientById = async (id) =>{
-              const patient = await fetch(`http://localhost:8080/patients/${id}`)
+              const patient = await fetch(`${SERVER_URL}/patients/${id}`)
               .then(response => response.json())
               // .then(data => console.log(data))
               .catch(error => console.error(error))
