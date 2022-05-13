@@ -2,13 +2,14 @@ import React, { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import PatientAppointmentsContainer from '../containers/PatientAppointmentsContainer';
 import IncorrectUser from '../components/IncorrectUser';
+import { SERVER_URL } from '../Constants';
 
 const PatientPage= ({currentPatient}) => {
   const [patientName, setPatientName] = useState("")
   const { patientId } = useParams();
   const [patientAppointmentsList, setPatientAppointmentsList] = useState([]);
   const getPatientAppointmentsUrl = 
-  "http://localhost:8080/appointments/patientId/" + patientId;
+  SERVER_URL + "/appointments/patientId/" + patientId;
   
   
 
@@ -52,7 +53,7 @@ const PatientPage= ({currentPatient}) => {
 
 
   useEffect(() => {
-    fetch("http://localhost:8080/patients")
+    fetch(SERVER_URL + "/patients")
       .then((response) => response.json())
       .then((data) => {
         return data.filter((d) => {
