@@ -7,11 +7,12 @@ import DoctorAppointmentsContainer from '../containers/DoctorAppointmentsContain
 import DoctorFormContainer from '../containers/DoctorFormContainer';
 import bookingImage from '../images/bookingImage.png'
 import IncorrectUser from '../components/IncorrectUser';
+import { SERVER_URL } from '../Constants';
 
 const DoctorPage = ({ currentDoctor }) => {
   const [patientList, setPatientList] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8080/patients")
+    fetch(SERVER_URL + "/patients")
       .then((response) => response.json())
       .then((data) => setPatientList(data))
       .catch((error) => console.log(error));
@@ -52,7 +53,7 @@ const DoctorPage = ({ currentDoctor }) => {
   // Had to run above useEffect when currentDoctor changes so update rendering!!!
 
   useEffect(() => {
-    fetch("http://localhost:8080/doctors")
+    fetch(SERVER_URL + "/doctors")
       .then((response) => response.json())
       .then((data) => {
         return data.filter((d) => {
@@ -67,8 +68,7 @@ const DoctorPage = ({ currentDoctor }) => {
 
   const [doctorAppointmentsList, setDoctorAppointmentsList] = useState([]);
   // const [isUpdated, setIsUpdated] = useState(false);
-  const getDoctorAppointmentsUrl =
-    "http://localhost:8080/appointments/doctorId/" + doctorId;
+  const getDoctorAppointmentsUrl = SERVER_URL + "/appointments/doctorId/" + doctorId;
   useEffect(
     () =>
       fetch(getDoctorAppointmentsUrl)
@@ -90,8 +90,7 @@ const DoctorPage = ({ currentDoctor }) => {
     const appointmentId = e.currentTarget.id;
 
     console.log(appointmentId);
-    const deleteAppointmentUrl =
-      "http://localhost:8080/appointments/" + appointmentId;
+    const deleteAppointmentUrl = SERVER_URL + "/appointments/" + appointmentId;
     await fetch(deleteAppointmentUrl, {
       method: "DELETE",
     });
@@ -102,7 +101,7 @@ const DoctorPage = ({ currentDoctor }) => {
   const updateAppointment = async (x, id) => {
     console.log(x);
     console.log(id);
-    const updateAppointmentUrl = "http://localhost:8080/appointments/" + id;
+    const updateAppointmentUrl = SERVER_URL + "/appointments/" + id;
     console.log(updateAppointmentUrl);
 
     fetch(updateAppointmentUrl, {
@@ -116,7 +115,7 @@ const DoctorPage = ({ currentDoctor }) => {
   };
 
   const addAppointment = (newAppointment) => {
-    fetch("http://localhost:8080/appointments", {
+    fetch(SERVER_URL + "/appointments", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
