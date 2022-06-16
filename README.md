@@ -1,8 +1,7 @@
 
 # Health First Front-end Project
 
-An NHS booking system allowing doctors to book, cancel or update appointments as well as allow both doctors and patients to view their upcoming appointments.
-This is the front-end for the [Health First back-end project.](https://github.com/Nasir-6/health-first-back-end) (originally produced by [Aoife, Hajr, Jake, Michael and Suraya](https://github.com/Jake-Raffe/Back-end_Project))
+We put your Health First!
 
 By Connie, Nasir, Nayan and Oleksiy.
 
@@ -23,16 +22,25 @@ By Connie, Nasir, Nayan and Oleksiy.
 
 ## Project Description
 
-A Tic-Tac-Toe game built using HTML, CSS and vanilla JS.
+This is the front-end for the [Health First back-end project.](https://github.com/Nasir-6/health-first-back-end) (originally produced by [Aoife, Hajr, Jake, Michael and Suraya](https://github.com/Jake-Raffe/Back-end_Project))
+It is a doctor appointment booking system allowing doctors to book, cancel or update appointments as well as allow both doctors and patients to view their upcoming appointments.
 
-This project was a mini front-end group project as part of the Bright Network Technology Academy - Full Stack Bootcamp (Cohort 4).
+This project was the front-end group project as part of the Bright Network Technology Academy - Full Stack Bootcamp (Cohort 4). It utilised the previously developed back-end project from another group with the intention to work with an unseen API and develop a front-end for it.
 
-The game can be played [here](https://nasir-6.github.io/Tic-Tac-Toe-Group-Project/) or deployed locally by following the instructions below.
+If deployed it can be found [here.](https://nasir-6.github.io/Tic-Tac-Toe-Group-Project/). Please email at mfinasir06@gmail.com if it isn't or there are issues. 
+If you would like to deploy the application locally please follow the instructions below.
 
 ## Local Setup Instructions
 
-    1. Clone the Repo: git clone git@github.com:Nasir-6/Tic-Tac-Toe-Group-Project.git
-    2. Open the index.html file using your browser or use the Live Server extension on VSCode 
+    1. Clone the Back end Repo: git clone git@github.com:Nasir-6/health-first-back-end.git
+    2. Create a postgresql database called "healthfirst"
+    3. Execute the commands in the [Database.sql file](https://github.com/Nasir-6/health-first-back-end/blob/main/database.sql) - we recommend connecting to the healthfirst db using positco to copy, paste and execute the commands.
+    4. Run the back-end using the IntelliJ IDE - the server port should configure to 8080 by default (if not please kill any other processes to free up this port)
+    5. Clone the Front-end Repo: git clone git@github.com:Nasir-6/health-first-front-end-project.git
+    6. Run the front-end application using "npm start" - this should run the application on localhost:3000
+    7. Double check you are not running the production build by checking the console log in your browser telling you to make sure the server is running on port 8080.
+    8. Enjoy! ;)
+
 
 
 ## Features
