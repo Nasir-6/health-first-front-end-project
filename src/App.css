@@ -178,6 +178,7 @@ text-align: center;
 .doctor-appointments-title, .form-title{
     color: var(--dark-color);
     align-self: center;
+    text-align: center;
     padding-bottom: 1rem;
 }
 
@@ -205,7 +206,7 @@ text-align: center;
     height: 20vh;
     max-width: 500px;
     min-height: 200px;
-    width: 80%;
+    width: 90%;
     /* min-width: 500px; */
   }
 
@@ -217,7 +218,7 @@ text-align: center;
 
   .form-card{
     max-width: 500px;
-    width: 100%;
+    width: 90%;
     
   }
 
@@ -569,7 +570,6 @@ text-align: center;
     a{
       color: white;
       text-align: center;
-      padding: 32px;
       width: 100%;
     }
     
@@ -588,36 +588,14 @@ text-align: center;
       width:100%;
   
     }
-    .signup-btn{
+    .signup-btn, .ourservices-btn, .aboutus-btn, .login-btn, .logout-btn{
       color: white;
       text-align: center;
       padding: 32px;
       width: 100%;
     }
-    .ourservices-btn{
-      color: white;
-      text-align: center;
-      padding: 32px;
-      width: 100%;
-    }
-    /* .logout-btn{
-      color: white;
-      text-align: center;
-      padding: 32px;
-      width: 100%;
-    } */
-    .aboutus-btn{
-      color: white;
-      text-align: center;
-      padding: 32px;
-      width: 100%;
-    }
-    .login-btn{
-      color: white;
-      text-align: center;
-      padding: 32px;
-      width: 100%;
-    }
+
+    
     .mobile-menu-icon{
       display:block;
       justify-content: flex-end;
@@ -655,7 +633,7 @@ text-align: center;
         width: 70%;
       }
 
-      .doctor-appointments-container{
+      .doctor-appointments-container, .form-container{
         padding: 3rem 0.5rem;
       }
 
