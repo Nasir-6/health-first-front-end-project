@@ -113,6 +113,7 @@ button:hover, .button:hover {
 
 .slogan{
   color: white;
+  text-align: center;
 }
 
 .about-us{
@@ -134,6 +135,7 @@ button:hover, .button:hover {
 
 .about-us-title{
 padding-top: 1rem;
+text-align: center;
 }
 
 
@@ -274,6 +276,7 @@ padding-top: 1rem;
 
 .bookingImage{
     padding: 2rem;
+    width: 100%;
 }
 
 /* Login page CSS */
@@ -289,6 +292,7 @@ padding-top: 1rem;
     display: flex;
     height: 50vh;
     width: 50vw;
+    min-width: 250px;
     border-radius: 5rem;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -459,6 +463,8 @@ padding-top: 1rem;
 
   .logo{
       padding: 2rem;
+      width: 90%;
+      max-width: 350px;
   }
 
   .our-services-center, .our-services-right, .our-services-left{
@@ -513,6 +519,7 @@ padding-top: 1rem;
 
     .about-us-left{
       width: 65%;
+      min-width: 350px;
     }
     
   }
@@ -539,7 +546,7 @@ padding-top: 1rem;
 
     .our-services-center, .our-services-right, .our-services-left{
       /* position: absolute; */
-      min-width: 90%;
+      min-width: 350px;
     }
 
   }

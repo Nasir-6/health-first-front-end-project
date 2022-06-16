@@ -48,12 +48,12 @@ If you would like to deploy the application locally please follow the instructio
 
 
 ## Features
-### Clean and Responsive UI
+### Professional and Responsive UI
 ![tic-tac-toe UI features](https://github.com/Nasir-6/Tic-Tac-Toe-Group-Project/blob/main/UI-demo.gif)
-- Clean design and consistent colour scheme
-- Features such as an icon showing for the current player, confetti for the winner and the color change for the winning combination to level up the UI experience
-- Compete against friends with score tracking and seamless name changing features
-- Responsive design so the game can be played on web or mobile
+- Add gif of scrolling through pages
+- Professional website design with the NHS color scheme in mind
+- About/Services pages to give users more information about the company
+- Responsive design with a collapsing Navbar to allow use on 
 
 
 ### CPU mode
