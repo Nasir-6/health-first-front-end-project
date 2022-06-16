@@ -32,14 +32,14 @@ If you would like to deploy the application locally please follow the instructio
 
 ## Local Setup Instructions
 
-    1. Clone the Back end Repo: git clone git@github.com:Nasir-6/health-first-back-end.git
-    2. Create a postgresql database called "healthfirst"
-    3. Execute the commands in the [Database.sql file](https://github.com/Nasir-6/health-first-back-end/blob/main/database.sql) - we recommend connecting to the healthfirst db using positco to copy, paste and execute the commands.
-    4. Run the back-end using the IntelliJ IDE - the server port should configure to 8080 by default (if not please kill any other processes to free up this port)
-    5. Clone the Front-end Repo: git clone git@github.com:Nasir-6/health-first-front-end-project.git
-    6. Run the front-end application using "npm start" - this should run the application on localhost:3000
-    7. Double check you are not running the production build by checking the console log in your browser telling you to make sure the server is running on port 8080.
-    8. Enjoy! ;)
+1. Clone the Back end Repo: git clone git@github.com:Nasir-6/health-first-back-end.git
+2. Create a postgresql database called "healthfirst"
+3. Execute the commands in the [Database.sql file](https://github.com/Nasir-6/health-first-back-end/blob/main/database.sql) - we recommend connecting to the healthfirst db using positco to copy, paste and execute the commands.
+4. Run the back-end using the IntelliJ IDE - the server port should configure to 8080 by default (if not please kill any other processes to free up this port)
+5. Clone the Front-end Repo: git clone git@github.com:Nasir-6/health-first-front-end-project.git
+6. Run the front-end application using "npm start" - this should run the application on localhost:3000
+7. Double check you are not running the production build by checking the console log in your browser telling you to make sure the server is running on port 8080.
+8. Enjoy! ;)
 
 
 
