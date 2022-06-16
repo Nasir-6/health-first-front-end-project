@@ -35,12 +35,13 @@ If you would like to deploy the application locally please follow the instructio
 1. Clone the Back end Repo:
 ```git clone git@github.com:Nasir-6/health-first-back-end.git```
 2. Follow the commands in the [database_setup_queries.md file](https://github.com/Nasir-6/health-first-back-end/blob/main/database_setup_queries.md) to create the database.
-3. Run the back-end using the IntelliJ IDE - the server port should configure to 8080 by default (if not please kill any other processes to free up this port)
+3. Run the back-end using the IntelliJ IDE - the server port should configure to 8080 by default (if not please kill any other processes to free up this port).
 4. Clone the Front-end Repo: 
 ```git clone git@github.com:Nasir-6/health-first-front-end-project.git```
-5. Run the front-end application using ```npm start``` - this should run the application on localhost:3000
-6. Double check you are not running the production build by checking the console log in your browser telling you to make sure the server is running on port 8080.
-7. Enjoy! ;)
+5. Open the "health-first-front-end-project" folder using VsCode and run ```npm install``` to install the required node modules. 
+6. Run the front-end application using ```npm start``` - this should run the application on localhost:3000
+7. Double check you are not running the production build by checking the console log in your browser telling you to make sure the server is running on port 8080.
+8. Enjoy! ;)
 
 
 
