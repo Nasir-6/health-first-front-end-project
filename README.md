@@ -25,9 +25,11 @@ By Connie, Nasir, Nayan and Oleksiy.
 This is the front-end for the [Health First back-end project.](https://github.com/Nasir-6/health-first-back-end) (originally produced by [Aoife, Hajr, Jake, Michael and Suraya](https://github.com/Jake-Raffe/Back-end_Project))
 It is a doctor appointment booking system allowing doctors to book, cancel or update appointments as well as allow both doctors and patients to view their upcoming appointments.
 
-This project was the front-end group project as part of the Bright Network Technology Academy - Full Stack Bootcamp (Cohort 4). It utilised the previously developed back-end project from another group with the intention to work with an unseen API and develop a front-end for it.
+This project was the front-end group project as part of the Bright Network Technology Academy - Full Stack Bootcamp (Cohort 4). It utilised the previously developed back-end project from another group with the intention to work with an unseen API and develop a React front-end for it.
 
-If deployed it can be found [here.](https://nasir-6.github.io/Tic-Tac-Toe-Group-Project/). Please email at mfinasir06@gmail.com if it isn't or there are issues. 
+This front-end project was built using HTML, CSS and ReactJs.
+
+If deployed it can be found [here](https://nasir-6.github.io/Tic-Tac-Toe-Group-Project/). Please email at mfinasir06@gmail.com if it isn't or there are issues. 
 If you would like to deploy the application locally please follow the instructions below.
 
 ## Local Setup Instructions
@@ -63,16 +65,24 @@ If you would like to deploy the application locally please follow the instructio
 
 
 ## What we learnt
-- How to wireframe an application and use HTML, CSS and vanilla JS to develop a basic game
+- How to plan and develop an application and use HTML, CSS and ReactJS to develop a booking system application
 - How to use GitHub for collaboration (using branches and dealing with merge conflicts)
-- Using flexbox, grid and media queries for a responsive design
-- Using external npm packages in our projects (Canvas-confetti and FontAwesome)
-- Incorporating promises/await/setTimeout to simulate a CPU turn
+- Connecting an external Java/SpringBoot Back-end to a React front-end
+- The structuring of a React application to ensure states are at a suitable level within the app - This aims to minimise prop-drilling whilst still allowing access to states where needed
+- The use of conditional rendering to show certain buttons or pages in different scenarios
+- The use of React Hooks (UseEffect, UseState)
+- The use of SessionStorage to keep track of logged-in user
+- The use of ReactRouter to create a multipage React App
+- The importance of developing the back-end with the front-end application in mind
+- Security issues arising from using the url as a means of holding user information
+- The use of flexbox, grid and media queries to create a responsive web application (including a collapsing navbar menu)
+- The access to the various input types within HTML forms (date, time etc.)
 
 ## Future improvements
-- Write tests for JS features
-- Incorporate online play using websockets
+- Write tests for JS/ReactJs features
+- Complete the SignUp section to allow new doctors/patients to register
 - Show expired appointments and upcoming appointments (date order)
+- Use Redux to manage states throughout the application (Useful for keeping track of logged-in user across the app, rather than using SessionStorage)
 
 ## Contributors
 
