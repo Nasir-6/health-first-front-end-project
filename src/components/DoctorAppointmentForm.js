@@ -76,7 +76,7 @@ function DoctorAppointmentForm({patientList, handleAppointmentSubmission}) {
   
     <>
       {/* <form onSubmit={this.handleSubmit}> */}
-      <form>
+      <form className="appointment-form">
         
       
 
