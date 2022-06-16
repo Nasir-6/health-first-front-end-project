@@ -539,7 +539,7 @@ text-align: center;
 
 
 
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 960px) {
 
     .login-card-right{
         width: 100%;
@@ -595,7 +595,7 @@ text-align: center;
       width: 100%;
     }
 
-    
+
     .mobile-menu-icon{
       display:block;
       justify-content: flex-end;
