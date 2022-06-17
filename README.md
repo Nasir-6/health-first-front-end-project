@@ -49,15 +49,13 @@ If you would like to deploy the application locally please follow the instructio
 
 ## Features
 ### Professional and Responsive UI
-![tic-tac-toe UI features](https://github.com/Nasir-6/Tic-Tac-Toe-Group-Project/blob/main/UI-demo.gif)
-- Add gif of scrolling through intial pages, and show responsive navbar
+![Responsive UI features](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/responsive_UI_demo.gif)
 - Professional website design with the NHS color scheme in mind
 - About/Services pages to give users more information about the company
 - Responsive design with a collapsing Navbar to allow use on mobile devices
 
 ### Functional Login System 
-![tic-tac-toe UI features](https://github.com/Nasir-6/Tic-Tac-Toe-Group-Project/blob/main/UI-demo.gif)
-- Insert gif of trying to log in, then log in and go to other places and then logout and then login as patient
+![Login system features](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/login_system_demo.gif)
 - In order to login, the user must choose whether they are a doctor or patient 
 - Then input their name and id in order to login
 - Warning text is shown if incorrect details are used
@@ -65,12 +63,10 @@ If you would like to deploy the application locally please follow the instructio
 - Keeps users logged in until they logout
 
 ### Intuitive booking system
-![CPU mode feature](https://github.com/Nasir-6/Tic-Tac-Toe-Group-Project/blob/main/CPU-mode-demo.gif)
-- Add gif showing Updating, cancelling and also creating a new appointmen 
+![booking system features](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/Booking_system_demo.gif)
 - Clean design laying out all current appointments
 - Intuitive booking system allowing doctors to update, cancel or create new appointments
 - Use of various input types such as dates, time and dropdown menus to aid the process
-- 
 
 
 ## What we learnt
