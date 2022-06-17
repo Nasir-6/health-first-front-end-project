@@ -29,6 +29,7 @@ const SignUp = ({setIsLoggedIn, updateCurrentUser}) => {
        <div className="login-card-right">
    
          <h2>Sign Up</h2>
+         
    
          <form className='radio-container'>
            {/* <p>Login as a:</p> */}
@@ -45,6 +46,7 @@ const SignUp = ({setIsLoggedIn, updateCurrentUser}) => {
          
    
          </form>
+         <p style={{color: "red"}}>No signup functionality yet!!</p>
    
          {isDoctor ? <DoctorLoginForm setIsLoggedIn={setIsLoggedIn} updateCurrentUser={updateCurrentUser}/> : <PatientLoginForm setIsLoggedIn={setIsLoggedIn} updateCurrentUser={updateCurrentUser} />}
    
