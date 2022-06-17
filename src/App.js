@@ -65,7 +65,8 @@ function App() {
     } else {
       setCurrentUser({
         name: newUser.name,
-        id: newUser.id
+        id: newUser.id,
+        isUserDoctor: newUser.isUserDoctor
       });
     }
   }
@@ -75,7 +76,7 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Navbar isLoggedIn={isLoggedIn} setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/>
+        <Navbar isLoggedIn={isLoggedIn} setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser} currentUser={currentUser}/>
         {/* <i class="fa-solid fa-x fa-3x"></i> */}
 
         <Routes>

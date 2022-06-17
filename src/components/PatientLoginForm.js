@@ -65,7 +65,8 @@ const PatientLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
                   // Also set the currentUser
                   updateCurrentUser({
                       name: patientName,
-                      id: patientNhsId
+                      id: patientNhsId,
+                      isUserDoctor: false
                   })
                   navigate(`/patient/${patientInDb.patientNhsId}`);
                   return
@@ -73,6 +74,11 @@ const PatientLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
                   setInvalidTextWarning("Something went wrong");
               }
   
+          }
+
+          const handleDemoButtonClick = () => {
+            setpatientName("Suraya")
+            setpatientNhsId("1")
           }
   
   
@@ -109,6 +115,7 @@ const PatientLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
       <p className="invalidText">{invalidTextWarning}</p>
 
       <input type="submit" value="Login" className="button login-page-btn" />
+      <button className="button demo-login-button" onClick={handleDemoButtonClick}>Demo Login</button>
     </form>
   </>
   )

@@ -5,9 +5,10 @@ import SignUpButton from '../components/SignUpButton'
 import LogoutButton from '../components/LogoutButton'
 import AboutUsButton from '../components/AboutUsButton'
 import OurServicesButton from '../components/OurServicesButton'
+import DashboardButton from '../components/DashboardButton'
 
 
-const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
+const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser, currentUser}) => {
 
   const [isMobile, setIsMobile] = useState(false)
 
@@ -27,8 +28,8 @@ const Navbar = ({ isLoggedIn, setLoginStatus, updateCurrentUser}) => {
     <div className={isMobile? 'navRight-mobile': 'navRight'} onClick={()=> setIsMobile(false)}>
       <AboutUsButton/>
       <OurServicesButton/>
-      {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/> : <LoginButton />}
-      {isLoggedIn ? <></> : <SignUpButton/>}
+      {isLoggedIn ? <DashboardButton currentUser={currentUser}/> : <LoginButton />}
+      {isLoggedIn ? <LogoutButton setLoginStatus={setLoginStatus} updateCurrentUser={updateCurrentUser}/> : <SignUpButton/>}
 
     {/* <div className='navRight'>
     <AboutUsButton/>

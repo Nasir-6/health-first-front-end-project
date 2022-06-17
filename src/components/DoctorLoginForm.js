@@ -59,7 +59,8 @@ const DoctorLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
                 // Also set the currentUser
                 updateCurrentUser({
                     name: doctorName,
-                    id: doctorId
+                    id: doctorId,
+                    isUserDoctor: true
                 })
                 navigate(`/doctor/${doctorInDb.doctorId}`);
                 return
