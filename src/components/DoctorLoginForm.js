@@ -70,6 +70,12 @@ const DoctorLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
         }
 
 
+        const handleDemoButtonClick = () => {
+          setDoctorName("Darwin");
+          setDoctorId("1")
+        }
+
+
 
 
 
@@ -104,6 +110,7 @@ const DoctorLoginForm = ({setIsLoggedIn, updateCurrentUser}) => {
         <p className="invalidText">{invalidTextWarning}</p>
 
         <input type="submit" value="Login" className="button login-page-btn" />
+        <button className="button demo-login-button" onClick={handleDemoButtonClick}>Demo Login</button>
       </form>
     </>
   );

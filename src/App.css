@@ -375,6 +375,11 @@ text-align: center;
   align-self: center;
 }
 
+.demo-login-button{
+  max-width: 125px;
+  align-self: center;
+}
+
 
 
 
