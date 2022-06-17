@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98ce2e0d-47d6-42a5-b42a-738cb879a444" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="98ce2e0d-47d6-42a5-b42a-738cb879a444" name="Changes" comment="Summarize changes in around 50 characters or less&#10;&#10;More detailed explanatory text, if necessary. Wrap it to about 72&#10;characters or so. In some contexts, the first line is treated as the&#10;subject of the commit and the rest of the text as the body. The&#10;blank line separating the summary from the body is critical (unless&#10;you omit the body entirely); various tools like `log`, `shortlog`&#10;and `rebase` can get confused if you run the two together.&#10;&#10;Explain the problem that this commit is solving. Focus on why you&#10;are making this change as opposed to how (the code explains that).&#10;Are there side effects or other unintuitive consequences of this&#10;change? Here's the place to explain them.&#10;&#10;Further paragraphs come after blank lines.&#10;&#10; - Bullet points are okay, too&#10;&#10; - Typically a hyphen or asterisk is used for the bullet, preceded&#10;   by a single space, with blank lines in between, but conventions&#10;   vary here&#10;&#10;If you use an issue tracker, put references to them at the bottom,&#10;like this:&#10;&#10;Resolves: #123&#10;See also: #456, #789">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

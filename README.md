@@ -26,11 +26,11 @@ By Connie, Nasir, Nayan and Oleksiy.
 This is the front-end for the [Health First back-end project.](https://github.com/Nasir-6/health-first-back-end) (originally produced by [Aoife, Hajr, Jake, Michael and Suraya](https://github.com/Jake-Raffe/Back-end_Project))
 It is a doctor appointment booking system allowing doctors to book, cancel or update appointments as well as allow both doctors and patients to view their upcoming appointments.
 
-This project was the front-end group project as part of the Bright Network Technology Academy - Full Stack Bootcamp (Cohort 4). It utilised the previously developed back-end project from another group with the intention to work with an unseen API and develop a React front-end for it.
+This project was the front-end group project for the Bright Network Technology Academy - Full Stack Bootcamp (Cohort 4). It utilised the previously developed back-end project from another group with the intention to work with an unseen API and develop a React front-end for it.
 
 This front-end project was built using HTML, CSS and ReactJs.
 
-If currently deployed it can be found [here](https://nasir-6.github.io/Tic-Tac-Toe-Group-Project/). Please email at mfinasir06@gmail.com if it isn't or there are any issues. 
+[//]: # (If currently deployed it can be found [here]&#40;https://nasir-6.github.io/Tic-Tac-Toe-Group-Project/&#41;. Please email at mfinasir06@gmail.com if it isn't or there are any issues. )
 If you would like to deploy the application locally please follow the instructions below.
 
 ## Local Setup Instructions
@@ -74,7 +74,7 @@ If you would like to deploy the application locally please follow the instructio
 - How to plan and develop an application and use HTML, CSS and ReactJS to develop a booking system application
 - How to use GitHub for collaboration (using branches and dealing with merge conflicts)
 - Connecting an external Java/SpringBoot Back-end to a React front-end
-- The structuring of a React application to ensure states are at a suitable level within the app - This aims to minimise prop-drilling whilst still allowing access to states where needed
+- How to structure a React application to ensure states are at a suitable level within the app with the aim of minimising prop-drilling whilst still allowing access to states where needed
 - The use of conditional rendering to show certain buttons or pages in different scenarios
 - The use of React Hooks (UseEffect, UseState)
 - The use of SessionStorage to keep track of logged-in user
@@ -82,7 +82,7 @@ If you would like to deploy the application locally please follow the instructio
 - The importance of developing the back-end with the front-end application in mind
 - Security issues arising from using the url as a means of holding user information
 - The use of flexbox, grid and media queries to create a responsive web application (including a collapsing navbar menu)
-- The access to the various input types within HTML forms (date, time etc.)
+- How to use the various input types within HTML forms (date, time etc.)
 
 ## Future improvements
 - Write tests for JS/ReactJs features
