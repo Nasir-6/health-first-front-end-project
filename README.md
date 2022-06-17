@@ -29,14 +29,14 @@ This project was the front-end group project as part of the Bright Network Techn
 
 This front-end project was built using HTML, CSS and ReactJs.
 
-If deployed it can be found [here](https://nasir-6.github.io/Tic-Tac-Toe-Group-Project/). Please email at mfinasir06@gmail.com if it isn't or there are issues. 
+If currently deployed it can be found [here](https://nasir-6.github.io/Tic-Tac-Toe-Group-Project/). Please email at mfinasir06@gmail.com if it isn't or there are any issues. 
 If you would like to deploy the application locally please follow the instructions below.
 
 ## Local Setup Instructions
 
-1. Clone the Back end Repo:
+1. Clone the Back-end Repo:
 ```git clone git@github.com:Nasir-6/health-first-back-end.git```
-2. Follow the commands in the [database_setup_queries.md file](https://github.com/Nasir-6/health-first-back-end/blob/main/database_setup_queries.md) to create the database.
+2. Follow the commands in the [database_setup_queries.md](https://github.com/Nasir-6/health-first-back-end/blob/main/database_setup_queries.md) file to create the database.
 3. Run the back-end using the IntelliJ IDE - the server port should configure to 8080 by default (if not please kill any other processes to free up this port).
 4. Clone the Front-end Repo: 
 ```git clone git@github.com:Nasir-6/health-first-front-end-project.git```
@@ -50,18 +50,27 @@ If you would like to deploy the application locally please follow the instructio
 ## Features
 ### Professional and Responsive UI
 ![tic-tac-toe UI features](https://github.com/Nasir-6/Tic-Tac-Toe-Group-Project/blob/main/UI-demo.gif)
-- Add gif of scrolling through pages
+- Add gif of scrolling through intial pages, and show responsive navbar
 - Professional website design with the NHS color scheme in mind
 - About/Services pages to give users more information about the company
-- Responsive design with a collapsing Navbar to allow use on 
+- Responsive design with a collapsing Navbar to allow use on mobile devices
 
+### Functional Login System 
+![tic-tac-toe UI features](https://github.com/Nasir-6/Tic-Tac-Toe-Group-Project/blob/main/UI-demo.gif)
+- Insert gif of trying to log in, then log in and go to other places and then logout and then login as patient
+- In order to login, the user must choose whether they are a doctor or patient 
+- Then input their name and id in order to login
+- Warning text is shown if incorrect details are used
+- Redirects to the user's dedicated page to show all appointments
+- Keeps users logged in until they logout
 
-### CPU mode
+### Intuitive booking system
 ![CPU mode feature](https://github.com/Nasir-6/Tic-Tac-Toe-Group-Project/blob/main/CPU-mode-demo.gif)
-- Selecting CPU mode changes player 2 to a CPU controlled player
-- Developed using promises/await/setTimeout to simulate the CPU's turn 
-- Based off of random turn generator (This was an initial feature as seen by the button on screen)
-- BNTA cohort 4 Easter egg (Play against Nasir's terrible Wi-Fi)
+- Add gif showing Updating, cancelling and also creating a new appointmen 
+- Clean design laying out all current appointments
+- Intuitive booking system allowing doctors to update, cancel or create new appointments
+- Use of various input types such as dates, time and dropdown menus to aid the process
+- 
 
 
 ## What we learnt
@@ -83,6 +92,7 @@ If you would like to deploy the application locally please follow the instructio
 - Complete the SignUp section to allow new doctors/patients to register
 - Show expired appointments and upcoming appointments (date order)
 - Use Redux to manage states throughout the application (Useful for keeping track of logged-in user across the app, rather than using SessionStorage)
+- Fix logout bug when refreshing page 
 
 ## Contributors
 
