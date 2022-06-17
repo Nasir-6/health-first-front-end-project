@@ -10,8 +10,9 @@ By Connie, Nasir, Nayan and Oleksiy.
 * [Project Description](#project-description)
 * [Local Setup Instructions](#local-setup-instructions)
 * [Features](#features)
-  * [Clean and Responsive UI](#clean-and-responsive-ui)
-  * [CPU Mode](#cpu-mode)
+  * [Professional and Responsive UI](#professional-and-responsive-ui)
+  * [Functional Login System](#functional-login-system)
+  * [Intutive Booking System](#intuitive-booking-system)
 * [Future Improvements](#future-improvements)
 * [What we learnt](#what-we-learnt)
 * [Contributors](#contributors)
@@ -56,13 +57,13 @@ If you would like to deploy the application locally please follow the instructio
 
 ### Functional Login System 
 ![Login system features](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/login_system_demo.gif)
-- In order to login, the user must choose whether they are a doctor or patient 
-- Then input their name and id in order to login
+- Users can log in as a doctor or patient 
+- They both their name and id in order to login successfully
 - Warning text is shown if incorrect details are used
 - Redirects to the user's dedicated page to show all appointments
-- Keeps users logged in until they logout
+- Keeps users logged in until they log out
 
-### Intuitive booking system
+### Intuitive Booking System
 ![booking system features](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/Booking_system_demo.gif)
 - Clean design laying out all current appointments
 - Intuitive booking system allowing doctors to update, cancel or create new appointments
