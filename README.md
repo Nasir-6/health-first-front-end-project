@@ -23,7 +23,8 @@ By Connie, Nasir, Nayan and Oleksiy.
 
 ## Project Description
 
-This is the front-end for the [Health First back-end project.](https://github.com/Nasir-6/health-first-back-end) (originally produced by [Aoife, Hajr, Jake, Michael and Suraya](https://github.com/Jake-Raffe/Back-end_Project))
+This is the front-end for the [Health First back-end project](https://github.com/Nasir-6/health-first-back-end) (originally produced by [Aoife, Hajr, Jake, Michael and Suraya](https://github.com/Jake-Raffe/Back-end_Project)).
+
 It is a doctor appointment booking system allowing doctors to book, cancel or update appointments as well as allow both doctors and patients to log in and view their upcoming appointments.
 
 This project was the front-end group project for the Bright Network Technology Academy - Full Stack Bootcamp (Cohort 4). It utilised a previously developed back-end project from another group with the intention to work with an unseen API and develop a React front-end for it.
