@@ -59,7 +59,7 @@ If you would like to deploy the application locally please follow the instructio
 ### Functional Login System 
 ![Login system features](https://github.com/Nasir-6/health-first-front-end-project/blob/main/demo_gifs/login_system_demo.gif)
 - Users can log in as a doctor or patient 
-- They require both their name and id in order to login successfully
+- They require both their Name and ID in order to login successfully
 - Warning text is shown if incorrect details are used
 - Redirects to the user's dedicated page to show all appointments
 - Keeps users logged in until they log out
